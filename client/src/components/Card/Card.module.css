@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap');
+
 :root {
     --color-green-positive: 60, 187, 180;
     --color-yellow-negative: 249, 173, 29;
@@ -26,7 +28,7 @@
     background-position: center;
 
     color: var(--color-white);
-    font-family: Lato;
+    font-family: 'Lato', sans-serif;
 }
 
 .thumbsUp{
@@ -49,17 +51,63 @@
     display: flex;
     flex-direction: column;
 
-    width: 80%;
-
-    margin: 0 auto;
+    margin-top: 7em;
 }
 
-.div_info p{
+.info__description{
+    margin-left: 36px;
+    width: 80%;
+}
+
+.info__div_first p{
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
     overflow: hidden;
     text-overflow: ellipsis;
+
+    font-size: 15px;
+    line-height: 18px;
+
+    font-weight: 400;
+}
+
+.info__div_first{
+    display: flex;
+    flex-direction: column;
+}
+
+.info__div_first span {
+    font-weight: 400;
+    font-size: 30px;
+
+    line-height: 36px;
+
+    margin-left: 30.77px;
+}
+
+.info__div_second{
+    display: flex;
+    flex-direction: column;
+
+    align-items: end;
+
+    margin-right: 34px;
+}
+
+.info__div_second span{
+    margin-left: 2px;
+
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.second__div_span{
+    margin-bottom: 12px;
+}
+
+.second__div_buttons{
+    
 }
 
 .div_percentage{
@@ -67,5 +115,7 @@
 
     justify-content: space-between;
 }
+
+
 
 

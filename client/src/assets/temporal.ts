@@ -55,7 +55,7 @@
       }
     },
     {
-      "name": "Greta Thumberg",
+      "name": "Greta Thunberg",
       "description": "Thunberg's activism started after convincing her parents to adopt several lifestyle choices to reduce their own carbon footprint.",
       "category": "environment",
       "picture": "https://i.guim.co.uk/img/media/bebb8c5677ea8addac562dca36b0ac4e9987b4a4/0_0_4684_2810/master/4684.jpg?width=1020&dpr=2&s=none",

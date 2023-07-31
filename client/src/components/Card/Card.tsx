@@ -48,14 +48,16 @@ export default function Card({name, description, category, picture, lastUpdated,
 
         <div className={s.div_info}>
             <div className={s.info__div_first}>
-                <span>{name}</span>     
-                <p>{description}</p>           
+                <span>{name}</span>
+                <div className={s.info__description}>
+                    <p>{description}</p>           
+                </div>     
             </div>
             <div className={s.info__div_second}>
-                <div>
+                <div className={s.second__div_span}>
                     <span>{text} in {getCapitalize(category)}</span>
                 </div>
-                <div>
+                <div className={s.second__div_buttons}>
                     <button><img src={thumbsUpIcon}/></button>
                     <button><img src={thumbsDownIcon}/></button>
                     <button>Vote Now</button>
