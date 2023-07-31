@@ -5,7 +5,7 @@ import {useState, useEffect} from 'react'
 import thumbsUpIcon from "../../../assets/img/thumbs-up.svg";
 import thumbsDownIcon from "../../../assets/img/thumbs-down.svg";
 
-import { getTime, getCapitalize } from '../services/utils';
+import { getTime, getCapitalize, getPercentages } from '../services/utils';
 
 
 type CardProps = {
@@ -21,23 +21,29 @@ type CardProps = {
 }
 
 type TypePercentaje = {
-    positive: number
-    negative: number
+    positivePercentage: number
+    negativePercentage: number
 }
 
 export default function Card({name, description, category, picture, lastUpdated, votes}:CardProps) {
-    const [text, setText] = useState<string>('')
-    const [percentage, setPercentage] = useState<TypePercentaje>()
-    const [voted, setVoted] = useState<boolean>(false)
+    const [percentage, setPercentage] = useState<TypePercentaje>();
+    const [voted, setVoted] = useState<boolean>(false);
+    const [text, setText] = useState<string>('');
 
     useEffect(() => {
         setText(getTime(lastUpdated))
-    },[text])
+        setPercentage(getPercentages(votes))
+    },[])
      
     return (
     <div style={{backgroundImage: `url(${picture})`}}>
         <div>
             <div>
+                {
+                    percentage && percentage?.positivePercentage > percentage?.negativePercentage
+                    ? <img src={thumbsUpIcon}/>
+                    : <img src={thumbsDownIcon}/>
+                }
                 <span>{name}</span>     
                 <p>{description}</p>           
             </div>
@@ -55,11 +61,11 @@ export default function Card({name, description, category, picture, lastUpdated,
         <div>
             <div>
                 <img src={thumbsUpIcon}/>
-                <span>{percentage?.positive}</span>
+                <span>{percentage?.positivePercentage}</span>
             </div>
             <div>
-                <img src={thumbsUpIcon}/>
-                <span>{percentage?.negative}</span>
+                <img src={thumbsDownIcon}/>
+                <span>{percentage?.negativePercentage}</span>
             </div>
         </div>
     </div>

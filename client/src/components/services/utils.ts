@@ -1,3 +1,8 @@
+type TypeVotes = {
+    positive: number
+    negative: number
+}
+
 /* This function will convert the date on JSON to a proper text */
 export function getTime(dateString: string): string {
     const date = new Date(dateString);
@@ -28,4 +33,15 @@ export function getCapitalize(string: string)  {
     if (!string) return string; // Return the original string if it's empty or undefined
 
     return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
+/* Calculate the percentage of the votes */
+export function getPercentages(votes: TypeVotes): { positivePercentage: number; negativePercentage: number } {
+    const { positive, negative } = votes;
+    const totalVotes = positive + negative;
+  
+    const positivePercentage = Math.round((positive / totalVotes) * 1000) / 10;
+    const negativePercentage = Math.round((negative / totalVotes) * 1000) / 10;
+  
+    return { positivePercentage, negativePercentage };
 }
