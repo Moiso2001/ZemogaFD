@@ -3,7 +3,7 @@ import {useEffect, useState} from 'react';
 import Slider from "react-slick";
 
 /* CSS */
-// import s from "./Body.module.css";
+import s from "./Body.module.css";
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
@@ -33,7 +33,7 @@ export default function Body() {
 
   return (
     <div>
-        <div>
+        <div className={s.div_head}>
             <span>Previous Rulings</span>
         </div>
         <Slider {...settings}> 
