@@ -33,6 +33,8 @@ export default function Card({name, description, category, picture, lastUpdated,
     const [voted, setVoted] = useState<boolean>(false);
     const [text, setText] = useState<string>('');
 
+    console.log(name)
+
     useEffect(() => {
         setText(getTime(lastUpdated))
         setPercentage(getPercentages(votes))
@@ -48,7 +50,7 @@ export default function Card({name, description, category, picture, lastUpdated,
 
         <div className={s.div_info}>
             <div className={s.info__div_first}>
-                <span>{name}</span>
+                <span className={s.name}>{name}</span>
                 <div className={s.info__description}>
                     <p>{description}</p>           
                 </div>     
@@ -64,12 +66,12 @@ export default function Card({name, description, category, picture, lastUpdated,
                 </div>
             </div>
         </div>
-        <div className={s.div_percentage}>
-            <div>
+        <div style={{gridTemplateColumns: `${percentage?.positivePercentage}% ${percentage?.negativePercentage}`}} className={s.div_percentage}>
+            <div className={s.percentage__div_positive}>
                 <img src={thumbsUpIcon}/>
                 <span>{percentage?.positivePercentage}</span>
             </div>
-            <div>
+            <div className={s.percentage__div_negative}>
                 <img src={thumbsDownIcon}/>
                 <span>{percentage?.negativePercentage}</span>
             </div>

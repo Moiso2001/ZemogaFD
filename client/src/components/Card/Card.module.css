@@ -47,6 +47,22 @@
     height: 30px;
 }
 
+.thumbsDown{
+    display: flex;
+    position: absolute;
+
+    top: 175px;
+
+    justify-content: center;
+    align-items: center;
+
+    margin-top: -80px;
+
+    background-color: #FBBD4A;
+    width: 30px;
+    height: 30px;
+}
+
 .div_info{
     display: flex;
     flex-direction: column;
@@ -78,6 +94,12 @@
 }
 
 .info__div_first span {
+    display: inline-block;
+    width: 260px; /* Adjust the width as needed */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
     font-weight: 400;
     font-size: 30px;
 
@@ -155,9 +177,15 @@
 }
 
 .div_percentage{
-    display: flex;
+    display: grid;
+}
 
-    justify-content: space-between;
+.percentage__div_positive{
+
+}
+
+.percentage__div_negative{
+    
 }
 
 
