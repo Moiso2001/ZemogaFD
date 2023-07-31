@@ -51,7 +51,7 @@
     display: flex;
     flex-direction: column;
 
-    margin-top: 7em;
+    margin-top: 38.8%;
 }
 
 .info__description{
@@ -107,7 +107,51 @@
 }
 
 .second__div_buttons{
-    
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+}
+
+.buttons_voteNow{
+    width: 107px;
+    height: 38px;
+    border: 1px solid #ffff;
+
+    background-color: #30303099;
+
+    color: #ffff;
+
+    font-weight: 400;
+    font-size: 15px;
+    text-align: center;
+}
+
+.buttons_up{
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    border: none;
+
+    background-color: rgb(60, 187, 180);
+    width: 30px;
+    height: 30px;
+}
+
+.buttons_down{
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    border: none;
+
+    background-color: #FBBD4A;
+    width: 30px;
+    height: 30px;
 }
 
 .div_percentage{
