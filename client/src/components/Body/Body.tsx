@@ -1,5 +1,5 @@
 /* REACT */
-import React from 'react';
+import {useEffect, useState} from 'react';
 import Slider from "react-slick";
 
 /* CSS */
@@ -12,7 +12,11 @@ export default function Body() {
         infinite: true,
         slidesToShow: 1,
         slidesToScroll: 1,
-      };
+    };
+
+    useEffect(() => {
+
+    }, [])
 
   return (
     <div>
