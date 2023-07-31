@@ -1,10 +1,11 @@
 /* React */
-import {useState} from 'react'
+import {useState, useEffect} from 'react'
 
 /* Icons */
 import thumbsUpIcon from "../../../assets/img/thumbs-up.svg";
 import thumbsDownIcon from "../../../assets/img/thumbs-down.svg";
 
+import { getTime, getCapitalize } from '../services/utils';
 
 
 type CardProps = {
@@ -27,8 +28,11 @@ type TypePercentaje = {
 export default function Card({name, description, category, picture, lastUpdated, votes}:CardProps) {
     const [text, setText] = useState<string>('')
     const [percentage, setPercentage] = useState<TypePercentaje>()
+    const [voted, setVoted] = useState<boolean>(false)
 
-
+    useEffect(() => {
+        setText(getTime(lastUpdated))
+    },[text])
      
     return (
     <div style={{backgroundImage: `url(${picture})`}}>
@@ -39,7 +43,7 @@ export default function Card({name, description, category, picture, lastUpdated,
             </div>
             <div>
                 <div>
-                    {text}
+                    <span>{text} in {getCapitalize(category)}</span>
                 </div>
                 <div>
                     <button><img src={thumbsUpIcon}/></button>
@@ -51,9 +55,11 @@ export default function Card({name, description, category, picture, lastUpdated,
         <div>
             <div>
                 <img src={thumbsUpIcon}/>
+                <span>{percentage?.positive}</span>
             </div>
             <div>
                 <img src={thumbsUpIcon}/>
+                <span>{percentage?.negative}</span>
             </div>
         </div>
     </div>
