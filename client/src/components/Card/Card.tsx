@@ -66,14 +66,14 @@ export default function Card({name, description, category, picture, lastUpdated,
                 </div>
             </div>
         </div>
-        <div style={{gridTemplateColumns: `${percentage?.positivePercentage}% ${percentage?.negativePercentage}`}} className={s.div_percentage}>
-            <div className={s.percentage__div_positive}>
-                <img src={thumbsUpIcon}/>
-                <span>{percentage?.positivePercentage}</span>
+        <div className={s.div_percentage}>
+            <div style={{width: `${percentage?.positivePercentage}%`}} className={s.percentage__div_positive}>
+                <img style={{width: "15px", height: "15px"}} src={thumbsUpIcon}/>
+                <span>{percentage?.positivePercentage}%</span>
             </div>
-            <div className={s.percentage__div_negative}>
-                <img src={thumbsDownIcon}/>
-                <span>{percentage?.negativePercentage}</span>
+            <div style={{width: `${percentage?.negativePercentage}%`}} className={s.percentage__div_negative}>
+                <span>{percentage?.negativePercentage}%</span>
+                <img style={{width: "15px", height: "15px"}} src={thumbsDownIcon}/>
             </div>
         </div>
     </div>

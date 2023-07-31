@@ -15,7 +15,7 @@
 
 .div_global{
     display: grid;
-    grid-template-rows: 80% 20%;
+    grid-template-rows: 88% 12%;
 
     justify-content: center;
     align-items: center;
@@ -67,7 +67,7 @@
     display: flex;
     flex-direction: column;
 
-    margin-top: 38.8%;
+    margin-top: 30.8%;
 }
 
 .info__description{
@@ -177,15 +177,25 @@
 }
 
 .div_percentage{
-    display: grid;
+    display: flex;
+
+    height: 36px;
 }
 
 .percentage__div_positive{
+    display: flex;
+    background-color: #3CBBB499;
 
+    align-items: center;
+    justify-content: left;
 }
 
 .percentage__div_negative{
-    
+    display: flex;
+    background-color: #F9AD1D99;
+
+    align-items: center;
+    justify-content: end;
 }
 
 
