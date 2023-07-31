@@ -5,8 +5,11 @@ import {useState, useEffect} from 'react'
 import thumbsUpIcon from "../../../assets/img/thumbs-up.svg";
 import thumbsDownIcon from "../../../assets/img/thumbs-down.svg";
 
-import { getTime, getCapitalize, getPercentages } from '../services/utils';
+/* CSS */
+import s from "./Card.module.css"
 
+/* Utils */
+import { getTime, getCapitalize, getPercentages } from '../services/utils';
 
 type CardProps = {
     name: string
@@ -36,18 +39,19 @@ export default function Card({name, description, category, picture, lastUpdated,
     },[])
      
     return (
-    <div style={{backgroundImage: `url(${picture})`}}>
-        <div>
-            <div>
-                {
-                    percentage && percentage?.positivePercentage > percentage?.negativePercentage
-                    ? <img src={thumbsUpIcon}/>
-                    : <img src={thumbsDownIcon}/>
-                }
+    <div style={{backgroundImage: `url(${picture})`}} className={s.div_global}>
+          {
+            percentage && percentage?.positivePercentage > percentage?.negativePercentage
+            ? <div className={s.thumbsUp}><img src={thumbsUpIcon}/></div>
+            : <div className={s.thumbsDown}><img src={thumbsDownIcon}/></div>
+          }
+
+        <div className={s.div_info}>
+            <div className={s.info__div_first}>
                 <span>{name}</span>     
                 <p>{description}</p>           
             </div>
-            <div>
+            <div className={s.info__div_second}>
                 <div>
                     <span>{text} in {getCapitalize(category)}</span>
                 </div>
@@ -58,7 +62,7 @@ export default function Card({name, description, category, picture, lastUpdated,
                 </div>
             </div>
         </div>
-        <div>
+        <div className={s.div_percentage}>
             <div>
                 <img src={thumbsUpIcon}/>
                 <span>{percentage?.positivePercentage}</span>
