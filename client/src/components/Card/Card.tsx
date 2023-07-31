@@ -33,8 +33,6 @@ export default function Card({name, description, category, picture, lastUpdated,
     const [voted, setVoted] = useState<boolean>(false);
     const [text, setText] = useState<string>('');
 
-    console.log(name)
-
     useEffect(() => {
         setText(getTime(lastUpdated))
         setPercentage(getPercentages(votes))
