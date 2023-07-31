@@ -1,4 +1,4 @@
-// import React from 'react'
+import {useState} from 'react'
 
 type CardProps = {
     name: string
@@ -13,7 +13,27 @@ type CardProps = {
 }
 
 export default function Card({name, description, category, picture, lastUpdated, votes}:CardProps) {
-  return (
-    <div>Card</div>
+    const [text, setText] = useState<string>('')
+  
+    return (
+    <div>
+        <div>
+            <div>
+                <span>{name}</span>     
+                <p>{description}</p>           
+            </div>
+            <div>
+                <div>
+                    {text}
+                </div>
+                <div>
+                    
+                </div>
+            </div>
+        </div>
+        <div>
+
+        </div>
+    </div>
   )
 }

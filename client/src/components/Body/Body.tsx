@@ -13,6 +13,9 @@ import { TheCard } from '../types/card';
 /* Components */
 import Card from '../Card/Card';
 
+/* Temporal */
+import dataArray from "../../assets/temporal"
+
 export default function Body() {
     const [cards, setCards] = useState<TheCard[]>()
 
