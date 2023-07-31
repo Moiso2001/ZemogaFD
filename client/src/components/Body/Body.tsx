@@ -7,7 +7,15 @@ import s from "./Body.module.css";
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
+/* Definitions */
+import { TheCard } from '../types/card';
+
+/* Components */
+import Card from '../Card/Card';
+
 export default function Body() {
+    const [cards, setCards] = useState<TheCard[]>()
+
     const settings = {
         infinite: true,
         slidesToShow: 1,
@@ -15,7 +23,7 @@ export default function Body() {
     };
 
     useEffect(() => {
-
+        setCards(dataArray)
     }, [])
 
   return (
@@ -24,7 +32,7 @@ export default function Body() {
             <span>Previous Rulings</span>
         </div>
         <Slider {...settings}> 
-
+            {cards?.map(e => <Card/>)}
         </Slider>
     </div>
   )
