@@ -68,12 +68,12 @@ export default function Card({name, description, category, picture, lastUpdated,
         </div>
         <div className={s.div_percentage}>
             <div style={{width: `${percentage?.positivePercentage}%`}} className={s.percentage__div_positive}>
-                <img style={{width: "15px", height: "15px"}} src={thumbsUpIcon}/>
+                <img src={thumbsUpIcon}/>
                 <span>{percentage?.positivePercentage}%</span>
             </div>
             <div style={{width: `${percentage?.negativePercentage}%`}} className={s.percentage__div_negative}>
                 <span>{percentage?.negativePercentage}%</span>
-                <img style={{width: "15px", height: "15px"}} src={thumbsDownIcon}/>
+                <img src={thumbsDownIcon}/>
             </div>
         </div>
     </div>

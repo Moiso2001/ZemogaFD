@@ -190,12 +190,35 @@
     justify-content: left;
 }
 
+.percentage__div_positive span {
+    font-size: 18px;
+}
+
+.percentage__div_positive img{
+    width: 15px;
+    height: 15px;
+    
+    margin: 0 6px 0 12px;
+}
+
+
 .percentage__div_negative{
     display: flex;
     background-color: #F9AD1D99;
 
     align-items: center;
     justify-content: end;
+}
+
+.percentage__div_negative span {
+    font-size: 18px;
+}
+
+.percentage__div_negative img{
+    width: 15px;
+    height: 15px;
+    
+    margin: 0 10px 0 5px;
 }
 
 
