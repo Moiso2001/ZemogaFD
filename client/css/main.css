@@ -46,7 +46,7 @@ hr[role="separator"] {
 
 .nav {
     position: fixed;
-    z-index: 2;
+    z-index: 3;
     top: 0;
     display: flex;
     width: calc(100vw - 2rem);
@@ -389,7 +389,6 @@ hr[role="separator"] {
 }
 
 main[role="main"] {
-    padding: 0 1rem;
     margin-top: 2rem;
 }
 

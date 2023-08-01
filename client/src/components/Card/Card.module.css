@@ -1,0 +1,654 @@
+/* 
+ Welcome to the card CSS, was a really adventure this card, the most though card but enjoyable 
+ to do, anyway... You will find divided the class names between designs for carousel and 
+ grid(default), and list, this will be and the end with a __list.
+*/
+
+
+:root {
+    --color-green-positive: 60, 187, 180;
+    --color-yellow-negative: 249, 173, 29;
+    --color-dark-background: rgba(0, 0, 0, .4);
+    --color-darker-background: rgba(0, 0, 0, .6);
+    --color-darker-gray: rgba(51, 51, 51, 1);
+    --color-dark-gray: rgba(70, 70, 70, 1);
+    --color-light-gray: rgba(235, 235, 235, 1);
+    --color-light-background: rgba(255, 255, 255, .4);
+    --color-lighter-background: rgba(255, 255, 255, .8);
+    --color-white: rgba(255, 255, 255, 1);
+}
+
+/* ---- Card in list view ---- */
+
+  /* -- Main Div List -- */
+.div_global__list{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    width: 96%;
+    height: 142px;
+
+    background-repeat: no-repeat;
+    background-position: left;
+    background-position: -40px 0;
+
+    margin: 0 auto;
+    margin-bottom: 2rem;
+
+    background-size: 250px 142px;
+
+    color: var(--color-white);
+    font-family: 'Lato', sans-serif;
+}
+
+.div_global__list::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.0001) 0%, #888888 19.79%, #666666 50%, rgba(51, 51, 51, 0.6) 71.88%);
+}
+
+
+ /* -- Design of thumbs --*/
+.thumbsUp__list{
+    display: flex;
+    position: absolute;
+
+    justify-content: center;
+    align-items: center;
+
+    background-color: rgb(60, 187, 180);
+    width: 30px;
+    height: 30px;
+}
+
+.thumbsDown__list{
+    display: flex;
+    position: absolute;
+
+    justify-content: center;
+    align-items: center;
+
+    background-color: #FBBD4A;
+    width: 30px;
+    height: 30px;
+}
+
+
+ /* -- Card List Info (name, description)-- */
+.div_info__list{
+    display: flex;
+
+    margin-bottom: 0.8%;
+    z-index: 1;
+}
+
+.info__div_first_list{
+    display: flex;
+    flex-direction: column;
+
+    margin-left: 150px;
+}
+
+.info__div_first_list span {
+    display: inline-block;
+    width: 300px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    font-weight: 400;
+    font-size: 28px;
+
+    line-height: 33.6px;
+}
+
+.info__description_list{
+    width: 80%;
+}
+
+.info__description_list p{
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    text-align: justify;
+    font-size: 14px;
+    line-height: 18px;
+
+    margin-top: 18px;
+
+    font-weight: 400;
+}
+
+
+  /* -- Card Info (text, buttons to vote)*/
+.info__div_second__list{
+    display: flex;
+    flex-direction: column;
+
+    align-items: end;
+
+    width: 30%;
+
+    margin: 8px 12px 0 0;
+}  
+
+.info__div_second__list span{
+    font-size: 12px;
+    font-weight: 400;
+
+    width: 160px;
+}
+
+.second__div_buttons__list{
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+}
+
+.buttons_voteNow__list{
+    width: 107px;
+    height: 38px;
+    border: 1px solid #ffff;
+
+    background-color: #30303099;
+
+    color: #ffff;
+
+    font-weight: 400;
+    font-size: 15px;
+    text-align: center;
+}
+
+.buttons_up__list{
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    border: none;
+
+    background-color: rgb(60, 187, 180);
+    width: 30px;
+    height: 30px;
+}
+
+.buttons_up__list:focus{
+    border: 2px solid #ffff;
+    outline: none;
+}
+
+.buttons_down__list{
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    border: none;
+
+    background-color: #FBBD4A;
+    width: 30px;
+    height: 30px;
+}
+
+.buttons_down__list:focus{
+    border: 2px solid #ffff;
+    outline: none;
+}
+
+  /* -- Percentage of Card in list view -- */
+.div_percentage__list{
+    display: flex;
+
+    height: 36px;
+    z-index: 2;
+}
+
+.percentage__div_positive__list{
+    display: flex;
+    background-color: #3CBBB499;
+
+    align-items: center;
+    justify-content: left;
+}
+
+.percentage__div_positive__list span {
+    font-size: 18px;
+    font-weight: 300;
+}
+
+.percentage__div_positive__list img{
+    width: 15px;
+    height: 15px;
+    
+    margin: 0 6px 0 12px;
+}
+
+.percentage__div_negative__list{
+    display: flex;
+    background-color: #F9AD1D99;
+
+    align-items: center;
+    justify-content: end;
+}
+
+.percentage__div_negative__list span {
+    font-size: 18px;
+
+    font-weight: 300;
+
+}
+
+.percentage__div_negative__list img{
+    width: 15px;
+    height: 15px;
+    
+    margin: 0 10px 0 5px;
+}
+
+/* ---- Card in Grid and Carousel View ---- */
+
+  /* -- Main Div --*/
+.div_global{
+    display: grid;
+    grid-template-rows: 86% 16%;
+
+    justify-content: center;
+    align-items: center;
+
+    width: 300px;
+    height: 300px;
+
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    color: var(--color-white);
+    font-family: 'Lato', sans-serif;
+}
+
+  /* -- Design of thumbs --*/
+.thumbsUp{
+    display: flex;
+    position: absolute;
+
+    top: 175px;
+
+    justify-content: center;
+    align-items: center;
+
+    margin-top: -80px;
+
+    background-color: rgb(60, 187, 180);
+    width: 30px;
+    height: 30px;
+}
+
+.thumbsDown{
+    display: flex;
+    position: absolute;
+
+    top: 175px;
+
+    justify-content: center;
+    align-items: center;
+
+    margin-top: -80px;
+
+    background-color: #FBBD4A;
+    width: 30px;
+    height: 30px;
+}
+
+  /* -- Card Info (name, description)-- */
+.div_info{
+    display: flex;
+    flex-direction: column;
+
+    margin-top: 28.7%;
+    z-index: 1;
+}
+
+.info__div_first{
+    display: flex;
+    flex-direction: column;
+}
+
+.info__div_first span {
+    display: inline-block;
+    width: 260px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    font-weight: 400;
+    font-size: 30px;
+
+    line-height: 36px;
+
+    margin-left: 30.77px;
+    margin-top: 1.5px;
+}
+
+.info__description{
+    margin-left: 36px;
+    width: 80%;
+}
+
+.info__description p{
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    font-size: 15px;
+    line-height: 18px;
+
+    margin: 8px 0 12px 0;
+
+    font-weight: 400;
+}
+
+
+  /* -- Card Info (text, buttons to vote)*/
+.info__div_second{
+    display: flex;
+    flex-direction: column;
+
+    align-items: end;
+
+    margin-right: 34px;
+}
+
+.info__div_second span{
+    margin-left: 2px;
+
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.second__div_span{
+    margin-bottom: 12px;
+}
+
+.second__div_buttons{
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+}
+
+.buttons_voteNow{
+    width: 107px;
+    height: 38px;
+    border: 1px solid #ffff;
+
+    background-color: #30303099;
+
+    color: #ffff;
+
+    font-weight: 400;
+    font-size: 15px;
+    text-align: center;
+}
+
+.buttons_up{
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    border: none;
+
+    background-color: rgb(60, 187, 180);
+    width: 30px;
+    height: 30px;
+}
+
+.buttons_up:focus{
+    border: 2px solid #ffff;
+    outline: none;
+}
+
+.buttons_down{
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    border: none;
+
+    background-color: #FBBD4A;
+    width: 30px;
+    height: 30px;
+}
+
+.buttons_down:focus{
+    border: 2px solid #ffff;
+    outline: none;
+}
+
+
+  /* -- Percentage Gauge Bar -- */
+.div_percentage{
+    display: flex;
+
+    height: 36px;
+    z-index: 2;
+}
+
+.percentage__div_positive{
+    display: flex;
+    background-color: #3CBBB499;
+
+    align-items: center;
+    justify-content: left;
+}
+
+.percentage__div_positive span {
+    font-size: 18px;
+    font-weight: 300;
+}
+
+.percentage__div_positive img{
+    width: 15px;
+    height: 15px;
+    
+    margin: 0 6px 0 12px;
+}
+
+.percentage__div_negative{
+    display: flex;
+    background-color: #F9AD1D99;
+
+    align-items: center;
+    justify-content: end;
+}
+
+.percentage__div_negative span {
+    font-size: 18px;
+
+    font-weight: 300;
+
+}
+
+.percentage__div_negative img{
+    width: 15px;
+    height: 15px;
+    
+    margin: 0 10px 0 5px;
+}
+
+
+/* Media query for Tablets */
+@media (min-width: 760px) and (max-width: 1000px) {
+    .div_global{
+        position: relative;
+        width: 351px;
+        height: 351px;
+
+        grid-template-rows: 86% 18%;
+        margin: 0 auto;
+        margin-bottom: 3.5rem;
+    }
+
+    .thumbsUp{
+        top: 202px;
+        left: 0;
+    }
+}
+
+/* Between 1000px and 1100px little size corrections */
+@media (min-width: 1000px) {
+    .div_global{
+        position: relative;
+        width: 351px;
+        height: 351px;
+
+        grid-template-rows: 86% 18%;
+        margin: 0 auto;
+        margin-bottom: 3rem;
+    }
+
+    .thumbsUp{
+        top: 202px;
+        left: 0;
+    }
+}
+
+/* Media query for Desktop */
+@media (min-width: 1100px) {
+    .div_global__list{
+        height: 170px;
+    
+        background-size: 290px 170px;
+    }
+
+    .div_percentage__list{    
+        height: 54px;
+    }
+
+    .thumbsUp__list{
+        width: 45px;
+        height: 45px;
+    }
+
+    .thumbsDown__list{
+        width: 45px;
+        height: 45px; 
+    }
+
+    .thumbsUp__list img{
+        width: 24px;
+        height: 24px;
+    }
+
+    .thumbsDown__list img{
+        width: 24px;
+        height: 24px;
+    }
+
+    .info__div_first_list{
+        margin-left: 259px;
+    }
+
+    .info__div_first_list span {
+        font-size: 38px;
+    
+        line-height: 63px;
+    }
+    
+    .info__description_list{
+        width: 80%;
+    }
+
+    .info__description_list p{
+        font-size: 18px;
+        line-height: 21.6px;
+    
+        margin-top: 0px;
+        margin-bottom: 2.1%;
+    }
+
+    .info__div_second__list{
+        margin: 8px 14px 0 0;
+    }  
+
+    
+    .info__div_second__list span{
+        font-size: 15px;
+        line-height: 18px;
+    }
+
+    .second__div_buttons__list{ 
+        gap: 9px;
+    }
+
+    .buttons_voteNow__list{
+        width: 135px;
+        height: 45px;
+
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 21.6px;
+    }
+
+    .buttons_up__list{
+        width: 45px;
+        height: 45px;
+    }
+
+    .buttons_up__list img{
+        width: 24px;
+        height: 24px;
+    }
+
+    .buttons_down__list{
+        width: 45px;
+        height: 45px;
+    }
+
+    .buttons_down__list img{
+        width: 24px;
+        height: 24px;
+    }
+
+    .percentage__div_positive__list span {
+        font-size: 27px;
+        font-weight: 300;
+
+        line-height: 32.4px;
+    }
+    
+    .percentage__div_positive__list img{
+        width: 22.5px;
+        height: 22.5px;
+
+        margin: 0 9px 0 18px;
+    }
+
+    .percentage__div_negative__list span {
+        font-size: 27px;
+        font-weight: 300;
+
+        line-height: 32.4px;   
+    }
+    
+    .percentage__div_negative__list img{
+        width: 22.5px;
+        height: 22.5px;
+
+        margin: 0 16px 0 8.5px;
+    }
+}
