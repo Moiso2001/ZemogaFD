@@ -63,7 +63,7 @@ export default function Card({id, name, description, category, picture, lastUpda
     return (
     <div style={{backgroundImage: `url(${picture})`}} className={s.div_global}>
           {
-            percentage && percentage?.positivePercentage > percentage?.negativePercentage
+            percentage && percentage?.positivePercentage >= percentage?.negativePercentage
             ? <div className={s.thumbsUp}><img src={thumbsUpIcon}/></div>
             : <div className={s.thumbsDown}><img src={thumbsDownIcon}/></div>
           }
