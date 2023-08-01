@@ -39,7 +39,7 @@
     font-size: 12px;
     font-weight: 500;
 
-    cursor: select;
+    cursor: pointer;
 
     z-index: 2;
 }
@@ -83,7 +83,7 @@
     font-size: 12px;
     font-weight: 500;
 
-    cursor: select
+    cursor: pointer
 }
 
 .option_grid{
@@ -146,4 +146,67 @@
         left: -0.13rem;
     }
 
+    .div_head span{
+        font-size: 45px;
+        line-height: 54px;
+    
+        font-weight: 300;
+    
+        padding-bottom: 14px;
+    }
+
+    .custom_select{
+        margin: 1rem 1rem 0 0;
+    
+        width: 173px;
+        height: 36px;
+
+        border: 2px solid black;
+    
+    
+        font-size: 13.5px;
+        line-height: 13.5px;
+    }
+
+    .custom_options{
+        position: absolute;
+    
+        top: 2rem;
+        margin-left: 1px;
+        
+        display: flex;
+        flex-direction: column;
+    
+        cursor: select
+    }
+
+    .option_list{
+        margin-right: 1rem;
+    
+        width: 173px;
+        height: 36px;
+    
+        top: 0;
+
+        border-top: 2px solid black;
+        border-right: 2px solid black;
+        border-left: 2px solid black;
+    
+        font-size: 13.5px;
+        line-height: 13.5px;
+    }
+
+    .option_grid{
+        margin-right: 1rem;
+    
+        width: 173px;
+        height: 36px;
+    
+        top: 0;
+
+        border: 2px solid black;
+    
+        font-size: 13.5px;
+        line-height: 13.5px;
+    }
 }
