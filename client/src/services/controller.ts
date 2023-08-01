@@ -1,3 +1,5 @@
+/* This controller will help to connect our client with the API */
+
 // Axios
 import axios from "axios";
 
