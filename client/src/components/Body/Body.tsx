@@ -13,8 +13,8 @@ import { TheCard } from '../../types/card';
 /* Components */
 import Card from '../Card/Card';
 
-/* Temporal */
-import dataArray from "../../assets/temporal"
+/* Controller */
+import { getAllCards } from '../services/controller';
 
 export default function Body() {
     const [cards, setCards] = useState<TheCard[]>()
@@ -31,7 +31,9 @@ export default function Body() {
     };
 
     useEffect(() => {
-        setCards(dataArray)
+        getAllCards()
+            .then(d => setCards(d))
+            .catch(e => console.log(e))
     }, [])
 
   return (
