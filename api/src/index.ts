@@ -1,5 +1,7 @@
 import express from 'express';
 import mongoose from 'mongoose';
+import { postCards } from './controllers/cardController';
+import dataArray from './controllers/utils';
 
 const app = express();
 const port = 3000;
@@ -20,9 +22,9 @@ mongoose.connect(connectionString)
 app.use(express.json());
 
 // Routes
-app.use('/', )
 
 // Start the server
 app.listen(port, () => {
+  postCards(dataArray);
   console.log(`Server running on http://localhost:${port}`);
 });
