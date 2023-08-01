@@ -93,6 +93,26 @@
 
     line-height: 33.6px;
 }
+
+.info__description_list{
+    width: 80%;
+}
+
+.info__description_list p{
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    text-align: justify;
+    font-size: 14px;
+    line-height: 18px;
+
+    margin: 18px 0 12px 0;
+
+    font-weight: 400;
+}
 /* Grid and carrousel Card*/
 
 .div_global{
@@ -153,17 +173,18 @@
     z-index: 1;
 }
 
-.info__description{
-    margin-left: 36px;
-    width: 80%;
-}
-
 .info__div_first{
     display: flex;
     flex-direction: column;
 }
 
-.info_text{
+
+.info__description{
+    margin-left: 36px;
+    width: 80%;
+}
+
+.info__description p{
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;

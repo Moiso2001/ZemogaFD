@@ -87,7 +87,7 @@ export default function Card({id, name, description, category, picture, lastUpda
         <div className={optionView === 'List' ? s.div_info__list : s.div_info}>
             <div className={optionView === 'List' ? s.info__div_first_list : s.info__div_first}>
                 <span className={s.name}>{name}</span>
-                <div className={s.info__description}>
+                <div className={optionView === 'List' ? s.info__description_list : s.info__description}>
                     <p className={s.info_text}>{description}</p>           
                 </div>     
             </div>
