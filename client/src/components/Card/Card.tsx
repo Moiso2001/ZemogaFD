@@ -187,7 +187,7 @@ export default function Card({id, name, description, category, picture, lastUpda
             <div style={{width: `${percentage?.negativePercentage}%`}} className={ optionView === 'List' ? s.percentage__div_negative__list : s.percentage__div_negative}>
                 <span>{percentage?.negativePercentage}%</span>
                 <img alt='Thumbs down' src={thumbsDownIcon}/>
-            </div>
+            </div> 
         </div>
     </div>
   )
