@@ -1,7 +1,9 @@
 /* 
- Welcome to my nemesis, the card CSS, was all love and hate with this little part, anyway...
-
+ Welcome to the card CSS, was a really adventure this card, the most though card but enjoyable 
+ to do, anyway... You will find divided the class names between designs for carousel and 
+ grid(default), and list, this will be and the end with a __list.
 */
+
 
 :root {
     --color-green-positive: 60, 187, 180;
@@ -18,6 +20,7 @@
 
 /* ---- Card in list view ---- */
 
+  /* -- Main Div List -- */
 .div_global__list{
     position: relative;
     display: flex;
@@ -49,13 +52,8 @@
     background: linear-gradient(90deg, rgba(0, 0, 0, 0.0001) 0%, #888888 19.79%, #666666 50%, rgba(51, 51, 51, 0.6) 71.88%);
 }
 
-.div_info__list{
-    display: flex;
 
-    margin-bottom: 0.8%;
-    z-index: 1;
-}
-
+ /* -- Design of thumbs --*/
 .thumbsUp__list{
     display: flex;
     position: absolute;
@@ -78,6 +76,15 @@
     background-color: #FBBD4A;
     width: 30px;
     height: 30px;
+}
+
+
+ /* -- Card List Info (name, description)-- */
+.div_info__list{
+    display: flex;
+
+    margin-bottom: 0.8%;
+    z-index: 1;
 }
 
 .info__div_first_list{
@@ -120,6 +127,8 @@
     font-weight: 400;
 }
 
+
+  /* -- Card Info (text, buttons to vote)*/
 .info__div_second__list{
     display: flex;
     flex-direction: column;
@@ -196,8 +205,7 @@
     outline: none;
 }
 
-/* -- Percentage of Card in list view -- */
-
+  /* -- Percentage of Card in list view -- */
 .div_percentage__list{
     display: flex;
 
@@ -225,7 +233,6 @@
     margin: 0 6px 0 12px;
 }
 
-
 .percentage__div_negative__list{
     display: flex;
     background-color: #F9AD1D99;
@@ -250,6 +257,7 @@
 
 /* ---- Card in Grid and Carousel View ---- */
 
+  /* -- Main Div --*/
 .div_global{
     display: grid;
     grid-template-rows: 86% 16%;
@@ -268,6 +276,7 @@
     font-family: 'Lato', sans-serif;
 }
 
+  /* -- Design of thumbs --*/
 .thumbsUp{
     display: flex;
     position: absolute;
@@ -300,6 +309,7 @@
     height: 30px;
 }
 
+  /* -- Card Info (name, description)-- */
 .div_info{
     display: flex;
     flex-direction: column;
@@ -313,6 +323,21 @@
     flex-direction: column;
 }
 
+.info__div_first span {
+    display: inline-block;
+    width: 260px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    font-weight: 400;
+    font-size: 30px;
+
+    line-height: 36px;
+
+    margin-left: 30.77px;
+    margin-top: 1.5px;
+}
 
 .info__description{
     margin-left: 36px;
@@ -334,22 +359,8 @@
     font-weight: 400;
 }
 
-.info__div_first span {
-    display: inline-block;
-    width: 260px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
 
-    font-weight: 400;
-    font-size: 30px;
-
-    line-height: 36px;
-
-    margin-left: 30.77px;
-    margin-top: 1.5px;
-}
-
+  /* -- Card Info (text, buttons to vote)*/
 .info__div_second{
     display: flex;
     flex-direction: column;
@@ -428,6 +439,8 @@
     outline: none;
 }
 
+
+  /* -- Percentage Gauge Bar -- */
 .div_percentage{
     display: flex;
 
@@ -496,6 +509,7 @@
     }
 }
 
+/* Between 1000px and 1100px little size corrections */
 @media (min-width: 1000px) {
     .div_global{
         position: relative;
