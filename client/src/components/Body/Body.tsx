@@ -1,3 +1,5 @@
+/* Welcome to the body component where the cards will be displayed, here we handle all the cards */
+
 /* REACT */
 import {useEffect, useState} from 'react';
 import Slider from "react-slick";
@@ -18,12 +20,14 @@ import Card from '../Card/Card';
 /* Controller */
 import { getAllCards, addVote } from '../../services/controller';
 
+
+
 export default function Body() {
-    /* Window manage states */
+    /* Window width and device manage states */
     const [view, setView] = useState<string | undefined>()
     const [windowWidth, setWindowWidth] = useState(window.innerWidth)
 
-    /* View option states */
+    /* View option states (Grid, List)*/
     const [optionView, setOptionView] = useState<string>('Grid')
     const [showOptions, setShowOptions] = useState(false);
  
@@ -31,7 +35,7 @@ export default function Body() {
     const [cards, setCards] = useState<TheCard[]>()
     const [countOfVotes, setCountOfVotes] = useState<number>(0)
 
-    /* Slider settings */
+    /* Slider carousel settings */
     const [carouselSettings, setCarouselSettings] = useState({
         infinite: true,
         slidesToShow: 1,
@@ -42,7 +46,10 @@ export default function Body() {
         centerMode: true,
       });
 
-    /* useEffect to have the window width, this to update the way that the cards will be showed  */
+    /* 
+     useEffect to have the window width. this to know wich device is being used and 
+     update the way that the cards will be displayed. 
+    */
     useEffect(() => {
         const handleWindowResize = () => {
           setWindowWidth(window.innerWidth);
@@ -56,6 +63,13 @@ export default function Body() {
         };
     }, []);
 
+    /* 
+     This useEffect may looks kind of tricky but this just take the window width
+     and select if this is for a phone, phone in horizontal, tablet or desktop
+     this will help to know if the carousel needs to be displayed or just the
+     grid and list options. (Also works to set better view of the carousel,
+     if 1 slides or 2 slides on phone in horizontal must be displayed).
+    */
     useEffect(() => {
         if(windowWidth <= 300){
             setView('phone')
@@ -80,7 +94,10 @@ export default function Body() {
         }
     }, [windowWidth])
     
-    /* useEffect which will get the new cards updated once somebody votes */
+    /* 
+     useEffect which will get the cards available on DB and the new cards updated 
+     once somebody votes.
+    */
     useEffect(() => {
         getAllCards()
             .then(d => setCards(d))
@@ -104,7 +121,10 @@ export default function Body() {
         <div className={s.div_head}>
             <span>Previous Rulings</span>
 
-            {/* Select options to change the view between list and grid */}
+            {/* 
+                Select options to change the type of view between list and grid 
+                This will be displayed just when the width is not for a phone.
+            */}
             {
                 view === 'tablet' ||  view === 'desktop'
                 ?<div onClick={_ => setShowOptions(s => !s)}>
@@ -113,7 +133,7 @@ export default function Body() {
                        <BiSolidDownArrow className={s.arrow_icon}/>
 
                        {
-                           showOptions
+                           showOptions 
                            &&<div className={s.custom_options}>
                                <div onClick={() => setOptionView('List')} className={s.option_list}>List</div>
                                <div onClick={() => setOptionView('Grid')} className={s.option_grid}>Grid</div>
@@ -124,9 +144,15 @@ export default function Body() {
                  </div>
                 : <></>
             }
-
         </div>
 
+        
+        {/* 
+            Here we have the body where the cards will be displayed
+            we have two cases, if the view is for a phone or not
+            if is a phone will return the carousel, otherwise
+            will return a simple div to handle de grids and list.
+        */}
         {
             view === 'phone' || view === 'phone-horizontal'
             ?
@@ -143,7 +169,7 @@ export default function Body() {
                         lastUpdated={e.lastUpdated}
                         votes={e.votes}
                         sendVote={handleSendVote}
-                        optionView={undefined}
+                        optionView={undefined} // Undefined because if this is a phone there is no grid or list options.
                     />)}
                 </Slider>
             </div>
@@ -160,7 +186,7 @@ export default function Body() {
                         lastUpdated={e.lastUpdated}
                         votes={e.votes}
                         sendVote={handleSendVote}
-                        optionView={optionView}
+                        optionView={optionView} // Pass current view which was selected by the user (grid, list).
                     />
                 )}
             </div>

@@ -3,7 +3,7 @@ type TypeVotes = {
     negative: number
 }
 
-/* This function will convert the date on JSON to a proper text */
+/* This function will convert the date on JSON stringify to a proper text */
 export function getTime(dateString: string): string {
     const date = new Date(dateString);
     const now = new Date();
@@ -35,7 +35,7 @@ export function getCapitalize(string: string)  {
     return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
-/* Calculate the percentage of the votes */
+/* Calculate the percentage of the votes, this is used on the gauge bar */
 export function getPercentages(votes: TypeVotes): { positivePercentage: number; negativePercentage: number } {
     const { positive, negative } = votes;
     const totalVotes = positive + negative;

@@ -1,3 +1,4 @@
+/* Definition of the cards */
 export type TheCard = {
     _id: string
     name: string
