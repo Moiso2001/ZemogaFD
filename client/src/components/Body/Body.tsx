@@ -1,4 +1,4 @@
-/* Welcome to the body component where the cards will be displayed, here we handle all the cards */
+/* Welcome to the Body component where the cards will be displayed, here we handle all the cards */
 
 /* REACT */
 import {useEffect, useState} from 'react';
