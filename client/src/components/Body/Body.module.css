@@ -136,4 +136,11 @@
     .cards__grid{
         grid-template-columns: 33% 33% 33%;
     }
+
+    .custom_options{
+        top: 1.5rem;
+        left: -0.13rem;
+    }
+
+    
 }
