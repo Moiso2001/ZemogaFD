@@ -25,7 +25,7 @@ Hope that you could find this code clear and understandable as I tried to did it
 --DB:
  -MongoDB
 
-** And a little from google when I forgot the media queries format.
+** And a little from google when I forgot the media queries format, and to find the picture of   each famous.
 
 |** 🚀 Steps to run 🏃**|
 
@@ -73,7 +73,6 @@ Also I missed to add the unit test with Jest this because the time, this to veri
 I was trying to change the "px" to "rem" but I found that with the default root (16px) the size was different from the template, I left at the end to change it and fix it but now Im running out of time.
 
 And at the end, you will find that the api is a little slow this is because this is just the default Railway and MongoDB plan where is hosted the server, so you'll find that will take a little more time to update the percentage and bring the cards.
-
 
 But even taking into acccount this, Im really proud of the result :). Anything else to add, thank you for the opportunity and have a great day.
 
