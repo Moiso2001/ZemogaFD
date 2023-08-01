@@ -1,3 +1,5 @@
+// Sample to be posted in DB in an bulk post.
+
 import { CardType } from "../types";
 
 const dataArray: CardType[] = [

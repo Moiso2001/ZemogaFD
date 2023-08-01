@@ -1,9 +1,19 @@
+/* 
+ This is our controllers which will be used to connect our API to DB
+ here you'll find the GET, PUT request and else if would be neccesary.
+*/
+
+/* Express */
 import { Request, Response } from 'express';
+
+/* Models */
 import Card, { CardDoc } from '../models/cards';
 
+/* Definitions */
 import { CardType } from '../types';
 
-// Route handler for /cards/all 
+
+// Route handler for /cards/all, this will help to post the cards in our DB. 
 export const getCards = async (req: Request, res: Response): Promise<void> => {
   try { 
     const cards: CardDoc[] = await Card.find();
@@ -18,13 +28,14 @@ export const getCards = async (req: Request, res: Response): Promise<void> => {
   }
 } 
 
-// Route handler to update votes
+// Route handler to update votes, /cards/:cardId/vote/:type 
 export const addVote = async (req: Request, res: Response) => {
   const { cardId, type } = req.params; // Assuming you are passing cardId and type ('positive' or 'negative') in the request parameters
 
   try {
     const card = await Card.findById(cardId);
 
+    /* Error hanlder in case the card does not exist by ID or if the kind of vote wasn't provided */
     if (!card) {
       return res.status(404).json({ error: 'Card not found.' });
     }

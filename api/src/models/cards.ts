@@ -1,5 +1,7 @@
 import mongoose from 'mongoose';
 
+
+/* This will be our schema on DB where each card will be saved */
 export interface CardDoc extends mongoose.Document {
     name: string
     description: string
