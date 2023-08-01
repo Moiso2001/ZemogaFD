@@ -8,6 +8,7 @@ import { TheCard } from "../../types/card";
 /* This controller will bring all the cards available on the DB */
 export const getAllCards = async (): Promise<TheCard[]> => {
     try {
+      /* BackEnd Put route */
         const response = await axios(`${BACKEND_URL}/cards/all`);
 
         const cards = response.data;
@@ -18,9 +19,10 @@ export const getAllCards = async (): Promise<TheCard[]> => {
     }
 }
 
-/* This controller will handle the put of the votes, negative and positives */
+/* This controller will handle put votes to DB, negative and positives */
 export const addVote = async (cardId: string, voteType: string): Promise<boolean> => {
     try {
+      /* BackEnd Put route */
       await axios.put(`${BACKEND_URL}/cards/${cardId}/vote/${voteType}`);
   
       return true;
