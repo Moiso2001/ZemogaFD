@@ -8,3 +8,7 @@
 
     font-weight: 300;
 }
+
+.div_slider{
+    width: calc(100% - 50px); /* Adjust the width to account for the 10px gap on each side */
+}

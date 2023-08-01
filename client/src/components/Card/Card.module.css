@@ -194,6 +194,7 @@
 
 .percentage__div_positive span {
     font-size: 18px;
+    font-weight: 300;
 }
 
 .percentage__div_positive img{
@@ -214,6 +215,9 @@
 
 .percentage__div_negative span {
     font-size: 18px;
+
+    font-weight: 300;
+
 }
 
 .percentage__div_negative img{

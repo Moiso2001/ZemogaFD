@@ -24,7 +24,9 @@ export default function Body() {
         slidesToShow: 1,
         slidesToScroll: 1,
         dots: false,
-        arrows: false
+        arrows: false,
+        centerMode: true, // Enable center mode
+        centerPadding: '10px', // Add padding on the sides of the slider container  
     };
 
     useEffect(() => {
@@ -36,17 +38,19 @@ export default function Body() {
         <div className={s.div_head}>
             <span>Previous Rulings</span>
         </div>
-        <Slider {...settings}> 
-            {cards?.map(e => 
-                <Card 
-                    name={e.name}
-                    description={e.description}
-                    category={e.category}
-                    picture={e.picture}
-                    lastUpdated={e.lastUpdated}
-                    votes={e.votes}
-                />)}
-        </Slider>
+        <div className={s.div_slider}>
+            <Slider {...settings}> 
+                {cards?.map(e => 
+                    <Card 
+                        name={e.name}
+                        description={e.description}
+                        category={e.category}
+                        picture={e.picture}
+                        lastUpdated={e.lastUpdated}
+                        votes={e.votes}
+                    />)}
+            </Slider>
+        </div>
     </div>
   )
 }

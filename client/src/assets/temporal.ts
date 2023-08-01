@@ -3,7 +3,7 @@
       "name": "Kanye West",
       "description": "Born in Atlanta and raised in Chicago, West was first known as a producer for Roc-A-Fella Records in the early 2000s, producing singles for several mainstream artists.",
       "category": "entertainment",
-      "picture": "https://tn.com.ar/resizer/xlbcf9S6uHOjm4QwO9bfZGBL6BI=/1440x0/smart/filters:format(webp)/cloudfront-us-east-1.images.arcpublishing.com/artear/ZCPGF2BZEBBNVEKYZW5GUFUUEE.JPG",
+      "picture": "https://www.nme.com/wp-content/uploads/2022/02/Kanye-West-DONDA-696x442.jpg",
       "lastUpdated": "2020-03-10T23:08:57.892Z",
       "votes": {
         "positive": 23,
@@ -14,7 +14,7 @@
       "name": "Mark Zuckerberg",
       "description": "Born in White Plains, New York, Zuckerberg attended Harvard University, where he launched the Facebook social networking service from his dormitory room on February 4, 2004.",
       "category": "business",
-      "picture": "https://images.ecestaticos.com/eHoVzqadhjCxEV-Oocl9RpdtJvQ=/0x0:2272x1545/600x450/filters:fill(white):format(jpg)/f.elconfidencial.com%2Foriginal%2F2f3%2Fccb%2F11d%2F2f3ccb11d2dd62f98441aaec186a3e44.jpg",
+      "picture": "https://mediacloud.theweek.com/image/private/s--yfzmWpS0--/f_auto,t_primary-image-desktop@1/v1608227923/24948_article_full.jpg",
       "lastUpdated": "2021-02-14T23:10:19.134Z",
       "votes": {
         "positive": 418,
