@@ -1,7 +1,7 @@
 Zemoga Front End Development - Moises David Plata :)
 ==================================================
 
-|** Resume of my experience **|
+|** 📝Resume of my experience **|
 
 In overall was an excellent test, love to work with a really good design as template,
 was a challenge the time since I was able to work by some hours through the day. 
@@ -9,7 +9,7 @@ was a challenge the time since I was able to work by some hours through the day.
 Hope that you could find this code clear and understandable as I tried to did it.
 
 
-|** TechStack Used **|
+"|** 🛠️ TechStack Used 🚀**|"
 
 --FrontEnd:
  -TypeScript
@@ -27,7 +27,7 @@ Hope that you could find this code clear and understandable as I tried to did it
 
 ** And a little from google when I forgot the media queries format.
 
-|** Steps to run **|
+|** 🚀 Steps to run 🏃**|
 
 1. This project was developed with NodeJS v18.12.0 and Git 2.34, an older version of this
    could generate some issues.
@@ -43,7 +43,13 @@ Hope that you could find this code clear and understandable as I tried to did it
 5. Take a look :) 
 
 
-|** How is this divided **|
+      If by any chance there is a problem starting in local, I deployed de project as extra:
+
+       🚀 https://zemoga-fd-moises.vercel.app/
+
+      I hope there is no problem to have it public, if it's please tell me to remove the website. Thanks.
+      
+|** 🔖 How is this divided 🔖**|
 
 This project was made with React running on vite and typescript, to give a brief overall,
 you could find that I mix the template provided and the react app. All my work is inside the 
@@ -58,7 +64,7 @@ you could find that I mix the template provided and the react app. All my work i
 
 
 
-|** Opportunities to imporove according to me. **|
+|** 🌟 Opportunities to Improve according to me 🚀**|
 
 Since I don't have more time to make it perfect, I want to say that I would have make a better planeation from beggining, since at the middle of the project I found that I could be doing the things a little different, this to have a simplest and better CSS and less code, and also an eaisest way to set the Grid and List differences.
 
