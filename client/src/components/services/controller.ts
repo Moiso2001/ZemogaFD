@@ -21,7 +21,7 @@ export const getAllCards = async (): Promise<TheCard[]> => {
 /* This controller will handle the put of the votes, negative and positives */
 export const addVote = async (cardId: string, voteType: string): Promise<boolean> => {
     try {
-      await axios.put(`http://localhost:3000/api/cards/${cardId}/vote/${voteType}`);
+      await axios.put(`${BACKEND_URL}/cards/${cardId}/vote/${voteType}`);
   
       return true;
     } catch (error) {

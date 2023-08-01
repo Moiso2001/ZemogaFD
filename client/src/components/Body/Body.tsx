@@ -14,10 +14,11 @@ import { TheCard } from '../../types/card';
 import Card from '../Card/Card';
 
 /* Controller */
-import { getAllCards } from '../services/controller';
+import { getAllCards, addVote } from '../services/controller';
 
 export default function Body() {
     const [cards, setCards] = useState<TheCard[]>()
+    const [countOfVotes, setCountOfVotes] = useState<number>(0)
 
     const settings = {
         infinite: false,
@@ -34,8 +35,16 @@ export default function Body() {
         getAllCards()
             .then(d => setCards(d))
             .catch(e => console.log(e))
-    }, [])
+    }, [countOfVotes])
 
+    async function handleSendVote(id: string, vote: string) {
+       const result = await addVote(id, vote)
+            
+       setCountOfVotes(c => c + 1)
+       return result
+    }
+
+    console.log(cards)
   return (
     <div>
         <div className={s.div_head}>
@@ -53,6 +62,7 @@ export default function Body() {
                         picture={e.picture}
                         lastUpdated={e.lastUpdated}
                         votes={e.votes}
+                        sendVote={handleSendVote}
                     />)}
             </Slider>
         </div>

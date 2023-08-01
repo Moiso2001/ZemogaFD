@@ -22,6 +22,7 @@ type CardProps = {
         positive: number
         negative: number
     }
+    sendVote: Function
 }
 
 type TypePercentaje = {
@@ -29,9 +30,10 @@ type TypePercentaje = {
     negativePercentage: number
 }
 
-export default function Card({id, name, description, category, picture, lastUpdated, votes}:CardProps) {
+export default function Card({id, name, description, category, picture, lastUpdated, votes, sendVote}:CardProps) {
     const textDefault = `${getTime(lastUpdated)} in ${getCapitalize(category)}`
     
+    console.log(votes)
     /* Initial states  */
     const [percentage, setPercentage] = useState<TypePercentaje>();
     const [text, setText] = useState<string>('');
@@ -40,19 +42,29 @@ export default function Card({id, name, description, category, picture, lastUpda
     const [typeVote, setTypeVote] = useState<string | undefined>()
     const [voted, setVoted] = useState<boolean>(false);
 
-
+    /* Initial useEffect to mount the initial votes */
     useEffect(() => {
-        setText(textDefault)
         setPercentage(getPercentages(votes))
+        setText(textDefault)
     },[])
 
+    /* Re render once the user votes again to update the percentage */
+    useEffect(() => {
+        setPercentage(getPercentages(votes))
+    }, [votes])
+
+    /* Function to handle once the user select positive o negative vote (beffore send vote) */
     function handleSelectVote(vote: string) {
         setTypeVote(vote)
     }
 
+    /* This function will take the vote selected and send the vote to our BackEnd */
     function handleSubmitVote() {
-        if(!voted){
-            setVoted(true)
+        if(!voted && typeVote){
+            sendVote(id, typeVote)
+            .catch(() => console.log('An error ocurred'))
+            
+            setVoted(true),
             setText('Thank you for your vote!')
         } else {
             setVoted(false)
@@ -62,6 +74,7 @@ export default function Card({id, name, description, category, picture, lastUpda
      
     return (
     <div style={{backgroundImage: `url(${picture})`}} className={s.div_global}>
+        {/* Option with more votes */}
           {
             percentage && percentage?.positivePercentage >= percentage?.negativePercentage
             ? <div className={s.thumbsUp}><img src={thumbsUpIcon}/></div>
