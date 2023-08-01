@@ -20,13 +20,14 @@ export default function Body() {
     const [cards, setCards] = useState<TheCard[]>()
 
     const settings = {
-        infinite: true,
+        infinite: false,
         slidesToShow: 1,
         slidesToScroll: 1,
         dots: false,
         arrows: false,
-        centerMode: true, // Enable center mode
-        centerPadding: '10px', // Add padding on the sides of the slider container  
+        swipe: true,
+        centerPadding: "35px",
+        centerMode: true
     };
 
     useEffect(() => {
