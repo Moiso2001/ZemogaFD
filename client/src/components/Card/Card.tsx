@@ -32,9 +32,7 @@ type TypePercentaje = {
     negativePercentage: number
 }
 
-export default function Card({id, name, description, category, picture, lastUpdated, votes, sendVote, optionView}:CardProps) {
-    console.log
-   
+export default function Card({id, name, description, category, picture, lastUpdated, votes, sendVote, optionView}:CardProps) {   
     const textDefault = `${getTime(lastUpdated)} in ${getCapitalize(category)}`
     
     /* Initial states  */
