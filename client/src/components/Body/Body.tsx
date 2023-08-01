@@ -33,7 +33,6 @@ export default function Body() {
         dots: false,
         arrows: false,
         swipe: true,
-        centerPadding: '20px',
         centerMode: true,
       });
 
@@ -55,11 +54,11 @@ export default function Body() {
         if(windowWidth <= 570){
             setView('phone')
 
-            setCarouselSettings((prevSettings) => ({ ...prevSettings, slidesToShow: 1}));
+            setCarouselSettings((prevSettings) => ({ ...prevSettings, slidesToShow: 1, centerPadding: '32px'}));
         } else if(windowWidth > 570 && windowWidth <= 760){
             setView('phone-horizontal')
             
-            setCarouselSettings((prevSettings) => ({ ...prevSettings, slidesToShow: 2, centerPadding: '10px'}));
+            setCarouselSettings((prevSettings) => ({ ...prevSettings, slidesToShow: 2, centerPadding: '24px'}));
         } else if(windowWidth > 760 && windowWidth < 1000 ){
             setView('tablet')
         } else if(windowWidth > 1000){
@@ -89,12 +88,13 @@ export default function Body() {
     <div>
         <div className={s.div_head}>
             <span>Previous Rulings</span>
-
-
         </div>
 
-        <div className={s.div_slider}>
-            <Slider {...carouselSettings}> 
+        {
+            view === 'phone' || view === 'phone-horizontal'
+            ?
+            <div className={s.div_slider}>
+                <Slider {...carouselSettings}> 
                 {cards?.map(e => 
                     <Card 
                         key={e._id}
@@ -107,8 +107,12 @@ export default function Body() {
                         votes={e.votes}
                         sendVote={handleSendVote}
                     />)}
-            </Slider>
-        </div>
+                </Slider>
+            </div>
+            :
+            <div></div>
+        }
+
     </div>
   )
 }
