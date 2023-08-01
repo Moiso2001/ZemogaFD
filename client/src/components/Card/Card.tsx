@@ -79,8 +79,8 @@ export default function Card({id, name, description, category, picture, lastUpda
         {/* Option with more votes */}
           {
             percentage && percentage?.positivePercentage >= percentage?.negativePercentage
-            ? <div className={optionView === 'List' ? s.thumbsUp__list: s.thumbsUp}><img src={thumbsUpIcon}/></div>
-            : <div className={optionView === 'List' ? s.thumbsDown__list: s.thumbsDown}><img src={thumbsDownIcon}/></div>
+            ? <div className={optionView === 'List' ? s.thumbsUp__list: s.thumbsUp}><img src={thumbsUpIcon} alt='Thumbs up'/></div>
+            : <div className={optionView === 'List' ? s.thumbsDown__list: s.thumbsDown}><img src={thumbsDownIcon} alt='Thumbs down'/></div>
           }
 
         {/* Card info */}
@@ -106,7 +106,7 @@ export default function Card({id, name, description, category, picture, lastUpda
                             onClick={_ => handleSelectVote('positive')} 
                             className={optionView === 'List' ? s.buttons_up__list : s.buttons_up}
                            >
-                            <img src={thumbsUpIcon}/>
+                            <img alt='Thumbs up' src={thumbsUpIcon}/>
                           </button>
                     }
                     {
@@ -116,7 +116,7 @@ export default function Card({id, name, description, category, picture, lastUpda
                             onClick={_ => handleSelectVote('negative')} 
                             className={optionView === 'List' ? s.buttons_down__list : s.buttons_down}
                           >
-                            <img src={thumbsDownIcon}/>
+                            <img alt='Thumbs down' src={thumbsDownIcon}/>
                           </button>
                     }
 
@@ -132,12 +132,12 @@ export default function Card({id, name, description, category, picture, lastUpda
         {/* Percentages bar */}
         <div className={optionView === 'List' ? s.div_percentage__list : s.div_percentage}>
             <div style={{width: `${percentage?.positivePercentage}%`}} className={ optionView === 'List' ? s.percentage__div_positive__list : s.percentage__div_positive}>
-                <img src={thumbsUpIcon}/>
+                <img alt='Thumbs up' src={thumbsUpIcon}/>
                 <span>{percentage?.positivePercentage}%</span>
             </div>
             <div style={{width: `${percentage?.negativePercentage}%`}} className={ optionView === 'List' ? s.percentage__div_negative__list : s.percentage__div_negative}>
                 <span>{percentage?.negativePercentage}%</span>
-                <img src={thumbsDownIcon}/>
+                <img alt='Thumbs down' src={thumbsDownIcon}/>
             </div>
         </div>
     </div>

@@ -130,7 +130,7 @@ export default function Body() {
                 ?<div onClick={_ => setShowOptions(s => !s)}>
                     <div className={s.custom_select}>
                        {optionView}
-                       <BiSolidDownArrow className={s.arrow_icon}/>
+                       <BiSolidDownArrow alt='Arrow down' className={s.arrow_icon}/>
 
                        {
                            showOptions 
