@@ -41,7 +41,7 @@ export default function Body() {
         centerMode: true,
       });
 
-    /* useEffect to have the window width to update the way that the cards are showed  */
+    /* useEffect to have the window width, this to update the way that the cards will be showed  */
     useEffect(() => {
         const handleWindowResize = () => {
           setWindowWidth(window.innerWidth);
@@ -121,7 +121,7 @@ export default function Body() {
         {
             view === 'phone' || view === 'phone-horizontal'
             ?
-            <div className={s.div_slider}>
+            <div>
                 <Slider {...carouselSettings}> 
                 {cards?.map(e => 
                     <Card 
@@ -134,7 +134,7 @@ export default function Body() {
                         lastUpdated={e.lastUpdated}
                         votes={e.votes}
                         sendVote={handleSendVote}
-                        view={view}
+                        optionView={undefined}
                     />)}
                 </Slider>
             </div>
@@ -151,7 +151,7 @@ export default function Body() {
                         lastUpdated={e.lastUpdated}
                         votes={e.votes}
                         sendVote={handleSendVote}
-                        view={view}
+                        optionView={view}
                     />
                 )}
             </div>
