@@ -57,12 +57,15 @@ export default function Body() {
     }, []);
 
     useEffect(() => {
-        if(windowWidth <= 370){
+        if(windowWidth <= 300){
+            setView('phone')
+
+            setCarouselSettings((prevSettings) => ({ ...prevSettings, slidesToShow: 1, centerPadding: '-10px'}));
+        } else if(windowWidth <= 370){
             setView('phone')
 
             setCarouselSettings((prevSettings) => ({ ...prevSettings, slidesToShow: 1, centerPadding: '8px'}));
-        }
-        if(windowWidth > 370 && windowWidth <= 570){
+        } else if(windowWidth > 370 && windowWidth <= 570){
             setView('phone')
 
             setCarouselSettings((prevSettings) => ({ ...prevSettings, slidesToShow: 1, centerPadding: '32px'}));
