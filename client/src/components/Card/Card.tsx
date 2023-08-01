@@ -58,7 +58,7 @@ export default function Card({id, name, description, category, picture, lastUpda
         setTypeVote(vote)
     }
 
-    /* This function will take the vote selected and send the vote to our BackEnd */
+    /* This function will take the vote selected and send the vote to our main function on Body */
     function handleSubmitVote() {
         if(!voted && typeVote){
             sendVote(id, typeVote)
@@ -96,7 +96,7 @@ export default function Card({id, name, description, category, picture, lastUpda
                     <span>{text}</span>
                 </div>
 
-                {/* Vote card options */}
+                {/* Vote options */}
                 <div className={s.second__div_buttons}>
                     {
                         voted
