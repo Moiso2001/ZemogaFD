@@ -45,6 +45,8 @@ export default function Body() {
             <Slider {...settings}> 
                 {cards?.map(e => 
                     <Card 
+                        key={e._id}
+                        id={e._id}
                         name={e.name}
                         description={e.description}
                         category={e.category}

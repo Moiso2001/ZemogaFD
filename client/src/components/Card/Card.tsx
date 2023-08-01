@@ -12,6 +12,7 @@ import s from "./Card.module.css"
 import { getTime, getCapitalize, getPercentages } from '../services/utils';
 
 type CardProps = {
+    id: string
     name: string
     description: string
     category: string
@@ -28,10 +29,12 @@ type TypePercentaje = {
     negativePercentage: number
 }
 
-export default function Card({name, description, category, picture, lastUpdated, votes}:CardProps) {
+export default function Card({id, name, description, category, picture, lastUpdated, votes}:CardProps) {
     const [percentage, setPercentage] = useState<TypePercentaje>();
-    const [voted, setVoted] = useState<boolean>(false);
     const [text, setText] = useState<string>('');
+    
+    const [voted, setVoted] = useState<boolean>(false);
+
 
     useEffect(() => {
         setText(getTime(lastUpdated))

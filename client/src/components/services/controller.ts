@@ -3,9 +3,9 @@ import axios from "axios";
 
 // Constants
 import { BACKEND_URL } from "./constants";
-import dataArray from "../../assets/temporal";
 import { TheCard } from "../../types/card";
 
+/* This controller will bring all the cards available on the DB */
 export const getAllCards = async (): Promise<TheCard[]> => {
     try {
         const response = await axios(`${BACKEND_URL}/cards/all`);
@@ -13,7 +13,19 @@ export const getAllCards = async (): Promise<TheCard[]> => {
         const cards = response.data;
         return cards
     } catch (error) {
-        console.log('Error fetchinig cards', error)
-        return dataArray
+        console.error('Error fetchinig cards', error)
+        return []
     }
 }
+
+/* This controller will handle the put of the votes, negative and positives */
+export const addVote = async (cardId: string, voteType: string): Promise<boolean> => {
+    try {
+      await axios.put(`http://localhost:3000/api/cards/${cardId}/vote/${voteType}`);
+  
+      return true;
+    } catch (error) {
+      console.error('Error adding vote:', error);
+      return false
+    }
+  };

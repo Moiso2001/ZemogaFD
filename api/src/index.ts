@@ -3,9 +3,13 @@ import mongoose from 'mongoose';
 import { postCards } from './controllers/cardController';
 import dataArray from './controllers/utils';
 import router from './routes';
+import cors from "cors";
 
 const app = express();
 const port = 3000;
+
+/* Enabling all origins to make request */
+app.use(cors());
 
 // MongoDB connection string (replace "<password>" with the actual password)
 const connectionString = 'mongodb+srv://moisesplatadev:Lila%401212@zemogadb.vszvisc.mongodb.net/?retryWrites=true&w=majority';
