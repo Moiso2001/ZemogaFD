@@ -194,6 +194,3 @@ export default function Body() {
     </div>
   )
 }
-
-
-// Im really proud of this Im not gonna lie.
