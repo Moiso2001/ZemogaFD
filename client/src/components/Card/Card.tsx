@@ -11,6 +11,7 @@ import s from "./Card.module.css"
 /* Utils */
 import { getTime, getCapitalize, getPercentages } from '../../services/utils';
 
+/* Component Types */
 type CardProps = {
     id: string
     name: string
@@ -33,7 +34,6 @@ type TypePercentaje = {
 export default function Card({id, name, description, category, picture, lastUpdated, votes, sendVote}:CardProps) {
     const textDefault = `${getTime(lastUpdated)} in ${getCapitalize(category)}`
     
-    console.log(votes)
     /* Initial states  */
     const [percentage, setPercentage] = useState<TypePercentaje>();
     const [text, setText] = useState<string>('');
