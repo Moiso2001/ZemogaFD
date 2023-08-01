@@ -17,21 +17,56 @@ import Card from '../Card/Card';
 import { getAllCards, addVote } from '../../services/controller';
 
 export default function Body() {
+    /* Window manage states */
+    const [view, setView] = useState<string | undefined>()
+    const [windowWidth, setWindowWidth] = useState(window.innerWidth)
+
+    /* Cards manage states */
     const [cards, setCards] = useState<TheCard[]>()
     const [countOfVotes, setCountOfVotes] = useState<number>(0)
 
     /* Slider settings */
-    const settings = {
-        infinite: false,
+    const [carouselSettings, setCarouselSettings] = useState({
+        infinite: true,
         slidesToShow: 1,
         slidesToScroll: 1,
         dots: false,
         arrows: false,
         swipe: true,
-        centerPadding: "35px",
-        centerMode: true
-    };
+        centerPadding: '20px',
+        centerMode: true,
+      });
 
+    /* useEffect to have the window width to update the way that the cards are showed  */
+    useEffect(() => {
+        const handleWindowResize = () => {
+          setWindowWidth(window.innerWidth);
+        };
+    
+        window.addEventListener('resize', handleWindowResize);
+    
+        // Remove event listener when the component unmounts to avoid memory leaks
+        return () => {
+          window.removeEventListener('resize', handleWindowResize);
+        };
+    }, []);
+
+    useEffect(() => {
+        if(windowWidth <= 570){
+            setView('phone')
+
+            setCarouselSettings((prevSettings) => ({ ...prevSettings, slidesToShow: 1}));
+        } else if(windowWidth > 570 && windowWidth <= 760){
+            setView('phone-horizontal')
+            
+            setCarouselSettings((prevSettings) => ({ ...prevSettings, slidesToShow: 2, centerPadding: '10px'}));
+        } else if(windowWidth > 760 && windowWidth < 1000 ){
+            setView('tablet')
+        } else if(windowWidth > 1000){
+            setView('desktop')
+        }
+    }, [windowWidth])
+    
     /* useEffect which will get the new cards updated once somebody votes */
     useEffect(() => {
         getAllCards()
@@ -54,9 +89,12 @@ export default function Body() {
     <div>
         <div className={s.div_head}>
             <span>Previous Rulings</span>
+
+
         </div>
+
         <div className={s.div_slider}>
-            <Slider {...settings}> 
+            <Slider {...carouselSettings}> 
                 {cards?.map(e => 
                     <Card 
                         key={e._id}
