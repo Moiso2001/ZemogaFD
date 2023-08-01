@@ -131,11 +131,112 @@
     font-weight: 400;
 }
 
+.second__div_buttons__list{
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+}
+
+.buttons_voteNow__list{
+    width: 107px;
+    height: 38px;
+    border: 1px solid #ffff;
+
+    background-color: #30303099;
+
+    color: #ffff;
+
+    font-weight: 400;
+    font-size: 15px;
+    text-align: center;
+}
+
+.buttons_up__list{
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    border: none;
+
+    background-color: rgb(60, 187, 180);
+    width: 30px;
+    height: 30px;
+}
+
+.buttons_up__list:focus{
+    border: 2px solid #ffff;
+    outline: none;
+}
+
+.buttons_down__list{
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    border: none;
+
+    background-color: #FBBD4A;
+    width: 30px;
+    height: 30px;
+}
+
+.buttons_down__list:focus{
+    border: 2px solid #ffff;
+    outline: none;
+}
+
 .div_percentage__list{
     display: flex;
 
     height: 36px;
     z-index: 2;
+}
+
+.percentage__div_positive__list{
+    display: flex;
+    background-color: #3CBBB499;
+
+    align-items: center;
+    justify-content: left;
+}
+
+.percentage__div_positive__list span {
+    font-size: 18px;
+    font-weight: 300;
+}
+
+.percentage__div_positive__list img{
+    width: 15px;
+    height: 15px;
+    
+    margin: 0 6px 0 12px;
+}
+
+
+.percentage__div_negative__list{
+    display: flex;
+    background-color: #F9AD1D99;
+
+    align-items: center;
+    justify-content: end;
+}
+
+.percentage__div_negative__list span {
+    font-size: 18px;
+
+    font-weight: 300;
+
+}
+
+.percentage__div_negative__list img{
+    width: 15px;
+    height: 15px;
+    
+    margin: 0 10px 0 5px;
 }
 
 /* Grid and carrousel Card*/
@@ -237,7 +338,7 @@
     line-height: 36px;
 
     margin-left: 30.77px;
-    margin-top: 3px;
+    margin-top: 1.5px;
 }
 
 .info__div_second{
@@ -386,22 +487,7 @@
     }
   }
 
-@media (min-width: 1000px) and (max-width: 1100px) {
-    .thumbsUp{
-        top: 214px;
-        left: 0;
-    }
 
-    .div_global{
-        position: relative;
-        width: 371px;
-        height: 371px;
-
-        grid-template-rows: 86% 18%;
-        margin: 0 auto;
-        margin-bottom: 3rem;
-    }
-}
 
 
 @media (min-width: 1000px) {
@@ -419,4 +505,145 @@
         top: 202px;
         left: 0;
     }
-  }
+}
+
+@media (min-width: 1000px) and (max-width: 1099px) {
+    .thumbsUp{
+        top: 214px;
+        left: 0;
+    }
+
+    .div_global{
+        position: relative;
+        width: 371px;
+        height: 371px;
+
+        grid-template-rows: 86% 18%;
+        margin: 0 auto;
+        margin-bottom: 3rem;
+    }
+}
+
+@media (min-width: 1100px) {
+    .div_global__list{
+        height: 170px;
+    
+        background-size: 290px 170px;
+    }
+
+    .div_info__list{    
+        margin-bottom: 0px;
+    }
+
+    .div_percentage__list{    
+        height: 54px;
+    }
+
+    .thumbsUp__list{
+        width: 45px;
+        height: 45px;
+    }
+
+    .thumbsDown__list{
+        width: 45px;
+        height: 45px; 
+    }
+
+    .thumbsUp__list img{
+        width: 24px;
+        height: 24px;
+    }
+
+    .thumbsDown__list img{
+        width: 24px;
+        height: 24px;
+    }
+
+    .info__div_first_list{
+        margin-left: 259px;
+    }
+
+    .info__div_first_list span {
+        font-size: 38px;
+    
+        line-height: 63px;
+    }
+    
+    .info__description_list{
+        width: 80%;
+    }
+
+    .info__description_list p{
+        font-size: 18px;
+        line-height: 21.6px;
+    
+        margin-top: 0px;
+        margin-bottom: 2.1%;
+    }
+
+    .info__div_second__list{
+        margin: 8px 14px 0 0;
+    }  
+
+    .second__div_buttons__list{ 
+        gap: 9px;
+    }
+
+    .buttons_voteNow__list{
+        width: 135px;
+        height: 45px;
+
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 21.6px;
+    }
+
+    .buttons_up__list{
+        width: 45px;
+        height: 45px;
+    }
+
+    .buttons_up__list img{
+        width: 24px;
+        height: 24px;
+    }
+
+    .buttons_down__list{
+        width: 45px;
+        height: 45px;
+    }
+
+    .buttons_down__list img{
+        width: 24px;
+        height: 24px;
+    }
+
+    .percentage__div_positive__list span {
+        font-size: 27px;
+        font-weight: 300;
+
+        line-height: 32.4px;
+    }
+    
+    .percentage__div_positive__list img{
+        width: 22.5px;
+        height: 22.5px;
+
+        margin: 0 9px 0 18px;
+    }
+
+    .percentage__div_negative__list span {
+        font-size: 27px;
+        font-weight: 300;
+
+        line-height: 32.4px;   
+    }
+    
+    .percentage__div_negative__list img{
+        width: 22.5px;
+        height: 22.5px;
+
+        margin: 0 16px 0 8.5px;
+
+    }
+}

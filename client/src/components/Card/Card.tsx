@@ -86,7 +86,7 @@ export default function Card({id, name, description, category, picture, lastUpda
         {/* Card info */}
         <div className={optionView === 'List' ? s.div_info__list : s.div_info}>
             <div className={optionView === 'List' ? s.info__div_first_list : s.info__div_first}>
-                <span className={s.name}>{name}</span>
+                <span>{name}</span>
                 <div className={optionView === 'List' ? s.info__description_list : s.info__description}>
                     <p className={s.info_text}>{description}</p>           
                 </div>     
@@ -98,13 +98,13 @@ export default function Card({id, name, description, category, picture, lastUpda
                 </div>
 
                 {/* Vote options */}
-                <div className={s.second__div_buttons}>
+                <div className={optionView === 'List' ? s.second__div_buttons__list : s.second__div_buttons}>
                     {
                         voted
                         ? <div></div>
                         : <button 
                             onClick={_ => handleSelectVote('positive')} 
-                            className={s.buttons_up}
+                            className={optionView === 'List' ? s.buttons_up__list : s.buttons_up}
                            >
                             <img src={thumbsUpIcon}/>
                           </button>
@@ -114,7 +114,7 @@ export default function Card({id, name, description, category, picture, lastUpda
                         ? <div></div>
                         : <button 
                             onClick={_ => handleSelectVote('negative')} 
-                            className={s.buttons_down}
+                            className={optionView === 'List' ? s.buttons_down__list : s.buttons_down}
                           >
                             <img src={thumbsDownIcon}/>
                           </button>
@@ -122,7 +122,7 @@ export default function Card({id, name, description, category, picture, lastUpda
 
                     <button 
                         disabled={!typeVote} 
-                        className={s.buttons_voteNow}
+                        className={optionView === 'List' ? s.buttons_voteNow__list : s.buttons_voteNow}
                         onClick={_ => handleSubmitVote()}
                     >{voted ? 'Vote Again' : 'Vote Now'}</button>
                 </div>
@@ -131,11 +131,11 @@ export default function Card({id, name, description, category, picture, lastUpda
 
         {/* Percentages bar */}
         <div className={optionView === 'List' ? s.div_percentage__list : s.div_percentage}>
-            <div style={{width: `${percentage?.positivePercentage}%`}} className={s.percentage__div_positive}>
+            <div style={{width: `${percentage?.positivePercentage}%`}} className={ optionView === 'List' ? s.percentage__div_positive__list : s.percentage__div_positive}>
                 <img src={thumbsUpIcon}/>
                 <span>{percentage?.positivePercentage}%</span>
             </div>
-            <div style={{width: `${percentage?.negativePercentage}%`}} className={s.percentage__div_negative}>
+            <div style={{width: `${percentage?.negativePercentage}%`}} className={ optionView === 'List' ? s.percentage__div_negative__list : s.percentage__div_negative}>
                 <span>{percentage?.negativePercentage}%</span>
                 <img src={thumbsDownIcon}/>
             </div>
