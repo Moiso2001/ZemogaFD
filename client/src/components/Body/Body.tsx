@@ -24,7 +24,7 @@ export default function Body() {
     const [windowWidth, setWindowWidth] = useState(window.innerWidth)
 
     /* View option states */
-    const [optionView, setOptionView] = useState<string>('List')
+    const [optionView, setOptionView] = useState<string>('Grid')
     const [showOptions, setShowOptions] = useState(false);
  
     /* Cards manage states */
