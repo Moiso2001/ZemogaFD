@@ -238,5 +238,58 @@
 }
 
 
+@media (min-width: 760px) and (max-width: 1000px) {
+    /* Your styles for tablets here */
+
+    .div_global{
+        position: relative;
+        width: 351px;
+        height: 351px;
+
+        grid-template-rows: 86% 18%;
+        margin: 0 auto;
+        margin-bottom: 3rem;
+    }
+
+    .thumbsUp{
+        top: 202px;
+        left: 0;
+    }
+  }
+
+@media (min-width: 1000px) and (max-width: 1100px) {
+    .thumbsUp{
+        top: 214px;
+        left: 0;
+    }
+
+    .div_global{
+        position: relative;
+        width: 371px;
+        height: 371px;
+
+        grid-template-rows: 86% 18%;
+        margin: 0 auto;
+        margin-bottom: 3rem;
+    }
+}
 
 
+@media (min-width: 1000px) {
+    /* Your styles for tablets here */
+
+    .div_global{
+        position: relative;
+        width: 351px;
+        height: 351px;
+
+        grid-template-rows: 86% 18%;
+        margin: 0 auto;
+        margin-bottom: 3rem;
+    }
+
+    .thumbsUp{
+        top: 202px;
+        left: 0;
+    }
+  }

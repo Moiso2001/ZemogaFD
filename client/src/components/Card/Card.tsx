@@ -24,6 +24,7 @@ type CardProps = {
         negative: number
     }
     sendVote: Function
+    view: string | undefined
 }
 
 type TypePercentaje = {
@@ -31,7 +32,7 @@ type TypePercentaje = {
     negativePercentage: number
 }
 
-export default function Card({id, name, description, category, picture, lastUpdated, votes, sendVote}:CardProps) {
+export default function Card({id, name, description, category, picture, lastUpdated, votes, sendVote, view}:CardProps) {
     const textDefault = `${getTime(lastUpdated)} in ${getCapitalize(category)}`
     
     /* Initial states  */

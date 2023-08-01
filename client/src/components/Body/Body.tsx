@@ -134,11 +134,12 @@ export default function Body() {
                         lastUpdated={e.lastUpdated}
                         votes={e.votes}
                         sendVote={handleSendVote}
+                        view={view}
                     />)}
                 </Slider>
             </div>
             :
-            <div className={s.cards__list}>
+            <div className={optionView === 'List' ? s.cards__list : s.cards__grid}>
                 {cards?.map(e => 
                     <Card 
                         key={e._id}
@@ -150,6 +151,7 @@ export default function Body() {
                         lastUpdated={e.lastUpdated}
                         votes={e.votes}
                         sendVote={handleSendVote}
+                        view={view}
                     />
                 )}
             </div>
