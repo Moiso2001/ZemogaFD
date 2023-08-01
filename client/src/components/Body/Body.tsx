@@ -8,7 +8,7 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
 /* Definitions */
-import { TheCard } from '../types/card';
+import { TheCard } from '../../types/card';
 
 /* Components */
 import Card from '../Card/Card';
