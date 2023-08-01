@@ -121,14 +121,16 @@
 
     align-items: end;
 
+    width: 30%;
+
     margin: 8px 12px 0 0;
 }  
 
 .info__div_second__list span{
-    margin-left: 2px;
-
     font-size: 12px;
     font-weight: 400;
+
+    width: 160px;
 }
 
 .second__div_buttons__list{
@@ -531,10 +533,6 @@
         background-size: 290px 170px;
     }
 
-    .div_info__list{    
-        margin-bottom: 0px;
-    }
-
     .div_percentage__list{    
         height: 54px;
     }
@@ -584,6 +582,12 @@
     .info__div_second__list{
         margin: 8px 14px 0 0;
     }  
+
+    
+    .info__div_second__list span{
+        font-size: 15px;
+        line-height: 18px;
+    }
 
     .second__div_buttons__list{ 
         gap: 9px;
@@ -644,6 +648,5 @@
         height: 22.5px;
 
         margin: 0 16px 0 8.5px;
-
     }
 }
