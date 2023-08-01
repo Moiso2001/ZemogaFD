@@ -33,6 +33,8 @@ type TypePercentaje = {
 }
 
 export default function Card({id, name, description, category, picture, lastUpdated, votes, sendVote, optionView}:CardProps) {
+    console.log
+   
     const textDefault = `${getTime(lastUpdated)} in ${getCapitalize(category)}`
     
     /* Initial states  */
@@ -92,7 +94,7 @@ export default function Card({id, name, description, category, picture, lastUpda
                 </div>     
             </div>
 
-            <div className={s.info__div_second}>
+            <div className={optionView === 'List' ? s.info__div_second__list : s.info__div_second}>
                 <div className={s.second__div_span}>
                     <span>{text}</span>
                 </div>
@@ -130,7 +132,7 @@ export default function Card({id, name, description, category, picture, lastUpda
         </div>
 
         {/* Percentages bar */}
-        <div className={s.div_percentage}>
+        <div className={optionView === 'List' ? s.div_percentage__list : s.div_percentage}>
             <div style={{width: `${percentage?.positivePercentage}%`}} className={s.percentage__div_positive}>
                 <img src={thumbsUpIcon}/>
                 <span>{percentage?.positivePercentage}%</span>

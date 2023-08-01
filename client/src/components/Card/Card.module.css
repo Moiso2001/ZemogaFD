@@ -47,7 +47,7 @@
 .div_info__list{
     display: flex;
 
-    margin-bottom: 2.39rem;
+    margin-bottom: 0.8%;
     z-index: 1;
 }
 
@@ -114,6 +114,30 @@
 
     font-weight: 400;
 }
+
+.info__div_second__list{
+    display: flex;
+    flex-direction: column;
+
+    align-items: end;
+
+    margin: 8px 12px 0 0;
+}  
+
+.info__div_second__list span{
+    margin-left: 2px;
+
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.div_percentage__list{
+    display: flex;
+
+    height: 36px;
+    z-index: 2;
+}
+
 /* Grid and carrousel Card*/
 
 .div_global{
