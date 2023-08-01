@@ -3,7 +3,7 @@ import axios from "axios";
 
 // Constants
 import { BACKEND_URL } from "./constants";
-import { TheCard } from "../../types/card";
+import { TheCard } from "../types/card";
 
 /* This controller will bring all the cards available on the DB */
 export const getAllCards = async (): Promise<TheCard[]> => {

@@ -9,7 +9,7 @@ import thumbsUpIcon from "../../../assets/img/thumbs-up.svg";
 import s from "./Card.module.css"
 
 /* Utils */
-import { getTime, getCapitalize, getPercentages } from '../services/utils';
+import { getTime, getCapitalize, getPercentages } from '../../services/utils';
 
 type CardProps = {
     id: string

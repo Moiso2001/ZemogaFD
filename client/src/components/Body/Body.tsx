@@ -14,7 +14,7 @@ import { TheCard } from '../../types/card';
 import Card from '../Card/Card';
 
 /* Controller */
-import { getAllCards, addVote } from '../services/controller';
+import { getAllCards, addVote } from '../../services/controller';
 
 export default function Body() {
     const [cards, setCards] = useState<TheCard[]>()
