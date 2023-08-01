@@ -20,6 +20,7 @@ export default function Body() {
     const [cards, setCards] = useState<TheCard[]>()
     const [countOfVotes, setCountOfVotes] = useState<number>(0)
 
+    /* Slider settings */
     const settings = {
         infinite: false,
         slidesToShow: 1,
@@ -31,6 +32,7 @@ export default function Body() {
         centerMode: true
     };
 
+    /* useEffect which will get the new cards updated once somebody votes */
     useEffect(() => {
         getAllCards()
             .then(d => setCards(d))
@@ -44,7 +46,6 @@ export default function Body() {
        return result
     }
 
-    console.log(cards)
   return (
     <div>
         <div className={s.div_head}>
