@@ -30,16 +30,35 @@ type TypePercentaje = {
 }
 
 export default function Card({id, name, description, category, picture, lastUpdated, votes}:CardProps) {
+    const textDefault = `${getTime(lastUpdated)} in ${getCapitalize(category)}`
+    
+    /* Initial states  */
     const [percentage, setPercentage] = useState<TypePercentaje>();
     const [text, setText] = useState<string>('');
     
+    /* States to handle votes */
+    const [typeVote, setTypeVote] = useState<string | undefined>()
     const [voted, setVoted] = useState<boolean>(false);
 
 
     useEffect(() => {
-        setText(getTime(lastUpdated))
+        setText(textDefault)
         setPercentage(getPercentages(votes))
     },[])
+
+    function handleSelectVote(vote: string) {
+        setTypeVote(vote)
+    }
+
+    function handleSubmitVote() {
+        if(!voted){
+            setVoted(true)
+            setText('Thank you for your vote!')
+        } else {
+            setVoted(false)
+            setText(textDefault)
+        }
+    }
      
     return (
     <div style={{backgroundImage: `url(${picture})`}} className={s.div_global}>
@@ -49,6 +68,7 @@ export default function Card({id, name, description, category, picture, lastUpda
             : <div className={s.thumbsDown}><img src={thumbsDownIcon}/></div>
           }
 
+        {/* Card info */}
         <div className={s.div_info}>
             <div className={s.info__div_first}>
                 <span className={s.name}>{name}</span>
@@ -56,17 +76,45 @@ export default function Card({id, name, description, category, picture, lastUpda
                     <p>{description}</p>           
                 </div>     
             </div>
+
             <div className={s.info__div_second}>
                 <div className={s.second__div_span}>
-                    <span>{text} in {getCapitalize(category)}</span>
+                    <span>{text}</span>
                 </div>
+
+                {/* Vote card options */}
                 <div className={s.second__div_buttons}>
-                    <button className={s.buttons_up}><img src={thumbsUpIcon}/></button>
-                    <button className={s.buttons_down}><img src={thumbsDownIcon}/></button>
-                    <button className={s.buttons_voteNow}>Vote Now</button>
+                    {
+                        voted
+                        ? <div></div>
+                        : <button 
+                            onClick={_ => handleSelectVote('positive')} 
+                            className={s.buttons_up}
+                           >
+                            <img src={thumbsUpIcon}/>
+                          </button>
+                    }
+                    {
+                        voted
+                        ? <div></div>
+                        : <button 
+                            onClick={_ => handleSelectVote('negative')} 
+                            className={s.buttons_down}
+                          >
+                            <img src={thumbsDownIcon}/>
+                          </button>
+                    }
+
+                    <button 
+                        disabled={!typeVote} 
+                        className={s.buttons_voteNow}
+                        onClick={_ => handleSubmitVote()}
+                    >{voted ? 'Vote Again' : 'Vote Now'}</button>
                 </div>
             </div>
         </div>
+
+        {/* Percentages bar */}
         <div className={s.div_percentage}>
             <div style={{width: `${percentage?.positivePercentage}%`}} className={s.percentage__div_positive}>
                 <img src={thumbsUpIcon}/>
