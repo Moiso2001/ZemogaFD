@@ -68,6 +68,7 @@ export default function Card({id, name, description, category, picture, lastUpda
             setText('Thank you for your vote!')
         } else {
             setVoted(false)
+            setTypeVote(undefined)
             setText(textDefault)
         }
     }
