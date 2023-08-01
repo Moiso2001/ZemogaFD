@@ -1,6 +1,9 @@
 .div_head{
-    margin-bottom: 1.5rem;
+    display: flex;
 
+    justify-content: space-between;
+
+    margin-bottom: 1.5rem;
     padding-left: 1rem;
 }
 
@@ -11,6 +14,111 @@
     font-weight: 300;
 }
 
+.custom_select{
+    position: relative;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+
+    margin-right: 1rem;
+
+    width: 131px;
+    height: 28px;
+
+    text-align: center;
+    outline: none;
+
+    border: 3px solid black;
+
+    background-color: white;
+
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.custom_options{
+    position: absolute;
+
+    top: 2rem;
+    left: -0.15rem;
+
+    display: flex;
+    flex-direction: column;
+
+}
+
+.option_list{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-right: 1rem;
+
+    width: 131px;
+    height: 28px;
+
+    top: 0;
+    
+
+    text-align: center;
+    outline: none;
+
+    border-top: 3px solid black;
+    border-right: 3px solid black;
+    border-left: 3px solid black;
+
+    border-bottom: none;
+
+    background-color: white;
+
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.option_grid{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-right: 1rem;
+
+    width: 131px;
+    height: 28px;
+
+    top: 0;
+    
+
+    text-align: center;
+    outline: none;
+
+    border: 3px solid black;
+
+    background-color: white;
+
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.arrow_icon{
+    margin: 0 0.5rem 0 3rem;
+    
+    font-size: 0.9rem;
+}
+ 
+.select_option {
+    background: white;
+    border-radius: 0;
+}  
+
+
 .div_slider{
     width: 100%;
+}
+
+
+/* Sliders */
+
+.cards__list{
+    display: flex;
+    flex-direction: column;
 }
