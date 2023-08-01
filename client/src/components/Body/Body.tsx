@@ -3,9 +3,9 @@ import {useEffect, useState} from 'react';
 import Slider from "react-slick";
 
 /* CSS */
-import s from "./Body.module.css";
-import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import 'slick-carousel/slick/slick.css';
+import s from "./Body.module.css";
 
 /* Definitions */
 import { TheCard } from '../../types/card';
@@ -39,11 +39,15 @@ export default function Body() {
             .catch(e => console.log(e))
     }, [countOfVotes])
 
+    /* Main function to send the vote, brings the id and kind of vote to put route through controller */
     async function handleSendVote(id: string, vote: string) {
-       const result = await addVote(id, vote)
+       const successfullySent = await addVote(id, vote)
             
-       setCountOfVotes(c => c + 1)
-       return result
+       if(successfullySent){
+           setCountOfVotes(c => c + 1)
+       }
+
+       return successfullySent
     }
 
   return (

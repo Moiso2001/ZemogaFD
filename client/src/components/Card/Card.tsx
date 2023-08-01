@@ -2,8 +2,8 @@
 import {useState, useEffect} from 'react'
 
 /* Icons */
-import thumbsUpIcon from "../../../assets/img/thumbs-up.svg";
 import thumbsDownIcon from "../../../assets/img/thumbs-down.svg";
+import thumbsUpIcon from "../../../assets/img/thumbs-up.svg";
 
 /* CSS */
 import s from "./Card.module.css"
