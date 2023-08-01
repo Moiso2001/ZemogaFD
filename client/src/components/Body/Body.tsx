@@ -116,81 +116,91 @@ export default function Body() {
        return successfullySent
     }
 
-  return (
-    <div>
-        <div className={s.div_head}>
-            <span>Previous Rulings</span>
-
-            {/* 
-                Select options to change the type of view between list and grid 
-                This will be displayed just when the width is not for a phone.
-            */}
-            {
-                view === 'tablet' ||  view === 'desktop'
-                ?<div onClick={_ => setShowOptions(s => !s)}>
-                    <div className={s.custom_select}>
-                       {optionView}
-                       <BiSolidDownArrow alt='Arrow down' className={s.arrow_icon}/>
-
-                       {
-                           showOptions 
-                           &&<div className={s.custom_options}>
-                               <div onClick={() => setOptionView('List')} className={s.option_list}>List</div>
-                               <div onClick={() => setOptionView('Grid')} className={s.option_grid}>Grid</div>
-                             </div>     
-                       }
-
-                    </div>
-                 </div>
-                : <></>
-            }
-        </div>
-
-        
-        {/* 
-            Here we have the body where the cards will be displayed
-            we have two cases, if the view is for a phone or not
-            if is a phone will return the carousel, otherwise
-            will return a simple div to handle de grids and list.
-        */}
-        {
-            view === 'phone' || view === 'phone-horizontal'
-            ?
+    /* Verify that cards was already brought from the API, while show Loading component */
+    if(cards && cards.length > 0){
+        return (
             <div>
-                <Slider {...carouselSettings}> 
-                {cards?.map(e => 
-                    <Card 
-                        key={e._id}
-                        id={e._id}
-                        name={e.name}
-                        description={e.description}
-                        category={e.category}
-                        picture={e.picture}
-                        lastUpdated={e.lastUpdated}
-                        votes={e.votes}
-                        sendVote={handleSendVote}
-                        optionView={undefined} // Undefined because if this is a phone there is no grid or list options.
-                    />)}
-                </Slider>
+                <div className={s.div_head}>
+                    <span>Previous Rulings</span>
+        
+                    {/* 
+                        Select options to change the type of view between list and grid 
+                        This will be displayed just when the width is not for a phone.
+                    */}
+                    {
+                        view === 'tablet' ||  view === 'desktop'
+                        ?<div onClick={_ => setShowOptions(s => !s)}>
+                            <div className={s.custom_select}>
+                               {optionView}
+                               <BiSolidDownArrow alt='Arrow down' className={s.arrow_icon}/>
+        
+                               {
+                                   showOptions 
+                                   &&<div className={s.custom_options}>
+                                       <div onClick={() => setOptionView('List')} className={s.option_list}>List</div>
+                                       <div onClick={() => setOptionView('Grid')} className={s.option_grid}>Grid</div>
+                                     </div>     
+                               }
+        
+                            </div>
+                         </div>
+                        : <></>
+                    }
+                </div>
+        
+                
+                {/* 
+                    Here we have the body where the cards will be displayed
+                    we have two cases, if the view is for a phone or not
+                    if is a phone will return the carousel, otherwise
+                    will return a simple div to handle de grids and list.
+                */}
+                {
+                    view === 'phone' || view === 'phone-horizontal'
+                    ?
+                    <div>
+                        <Slider {...carouselSettings}> 
+                        {cards?.map(e => 
+                            <Card 
+                                key={e._id}
+                                id={e._id}
+                                name={e.name}
+                                description={e.description}
+                                category={e.category}
+                                picture={e.picture}
+                                lastUpdated={e.lastUpdated}
+                                votes={e.votes}
+                                sendVote={handleSendVote}
+                                optionView={undefined} // Undefined because if this is a phone there is no grid or list options.
+                            />)}
+                        </Slider>
+                    </div>
+                    :
+                    <div className={optionView === 'List' ? s.cards__list : s.cards__grid}>
+                        {cards?.map(e => 
+                            <Card 
+                                key={e._id}
+                                id={e._id}
+                                name={e.name}
+                                description={e.description}
+                                category={e.category}
+                                picture={e.picture}
+                                lastUpdated={e.lastUpdated}
+                                votes={e.votes}
+                                sendVote={handleSendVote}
+                                optionView={optionView} // Pass current view which was selected by the user (grid, list).
+                            />
+                        )}
+                    </div>
+                }
             </div>
-            :
-            <div className={optionView === 'List' ? s.cards__list : s.cards__grid}>
-                {cards?.map(e => 
-                    <Card 
-                        key={e._id}
-                        id={e._id}
-                        name={e.name}
-                        description={e.description}
-                        category={e.category}
-                        picture={e.picture}
-                        lastUpdated={e.lastUpdated}
-                        votes={e.votes}
-                        sendVote={handleSendVote}
-                        optionView={optionView} // Pass current view which was selected by the user (grid, list).
-                    />
-                )}
+          )
+    } else {
+        return (
+            <div>
+                {/* Can be replaced with a real loading animation */}
+                <span>Loading...</span> 
             </div>
-        }
-    </div>
-  )
+        )
+    }
 }

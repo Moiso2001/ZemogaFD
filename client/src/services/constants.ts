@@ -4,4 +4,5 @@
  it as a constant here.
 */
 
-export const BACKEND_URL = "http://localhost:3000"
+export const BACKEND_URL = 'https://zemogafd-production.up.railway.app' // Production server on railway.
+// export const BACKEND_URL = "http://localhost:3000" // In case that you need to run api on local host.
