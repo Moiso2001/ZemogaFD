@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { getCards } from '../controllers/cardController';
+import { getCards, addVote } from '../controllers/cardController';
 
 const router = Router();
 
@@ -7,6 +7,6 @@ const router = Router();
 router.get('/cards/all', getCards);
 
 // Put routes
-
+router.put('/cards/:cardId/vote/:type', addVote);
 
 export default router;
