@@ -75,20 +75,20 @@ export default function Card({id, name, description, category, picture, lastUpda
     }
      
     return (
-    <div style={{backgroundImage: `url(${picture})`}} className={s.div_global}>
+    <div style={{backgroundImage: `url(${picture})`}} className={optionView === 'List' ? s.div_global__list : s.div_global}>
         {/* Option with more votes */}
           {
             percentage && percentage?.positivePercentage >= percentage?.negativePercentage
-            ? <div className={s.thumbsUp}><img src={thumbsUpIcon}/></div>
-            : <div className={s.thumbsDown}><img src={thumbsDownIcon}/></div>
+            ? <div className={optionView === 'List' ? s.thumbsUp__list: s.thumbsUp}><img src={thumbsUpIcon}/></div>
+            : <div className={optionView === 'List' ? s.thumbsDown__list: s.thumbsDown}><img src={thumbsDownIcon}/></div>
           }
 
         {/* Card info */}
-        <div className={s.div_info}>
-            <div className={s.info__div_first}>
+        <div className={optionView === 'List' ? s.div_info__list : s.div_info}>
+            <div className={optionView === 'List' ? s.info__div_first_list : s.info__div_first}>
                 <span className={s.name}>{name}</span>
                 <div className={s.info__description}>
-                    <p>{description}</p>           
+                    <p className={s.info_text}>{description}</p>           
                 </div>     
             </div>
 

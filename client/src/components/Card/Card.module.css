@@ -1,4 +1,3 @@
-
 :root {
     --color-green-positive: 60, 187, 180;
     --color-yellow-negative: 249, 173, 29;
@@ -11,6 +10,90 @@
     --color-lighter-background: rgba(255, 255, 255, .8);
     --color-white: rgba(255, 255, 255, 1);
 }
+
+/* List Card */
+
+.div_global__list{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+    height: 142px;
+
+    background-repeat: no-repeat;
+    background-position: left;
+    background-position: -40px 0;
+
+    margin-bottom: 5rem;
+
+    background-size: 250px 142px;
+
+    color: var(--color-white);
+    font-family: 'Lato', sans-serif;
+}
+
+.div_global__list::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.0001) 0%, #888888 19.79%, #666666 50%, rgba(51, 51, 51, 0.6) 71.88%);
+}
+
+.div_info__list{
+    display: flex;
+
+    margin-bottom: 2.39rem;
+    z-index: 1;
+}
+
+.thumbsUp__list{
+    display: flex;
+    position: absolute;
+
+    justify-content: center;
+    align-items: center;
+
+    background-color: rgb(60, 187, 180);
+    width: 30px;
+    height: 30px;
+}
+
+.thumbsDown__list{
+    display: flex;
+    position: absolute;
+
+    justify-content: center;
+    align-items: center;
+
+    background-color: #FBBD4A;
+    width: 30px;
+    height: 30px;
+}
+
+.info__div_first_list{
+    display: flex;
+    flex-direction: column;
+
+    margin-left: 150px;
+}
+
+.info__div_first_list span {
+    display: inline-block;
+    width: 300px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    font-weight: 400;
+    font-size: 28px;
+
+    line-height: 33.6px;
+}
+/* Grid and carrousel Card*/
 
 .div_global{
     display: grid;
@@ -66,7 +149,8 @@
     display: flex;
     flex-direction: column;
 
-    margin-top: 29%;
+    margin-top: 28.7%;
+    z-index: 1;
 }
 
 .info__description{
@@ -74,7 +158,12 @@
     width: 80%;
 }
 
-.info__div_first p{
+.info__div_first{
+    display: flex;
+    flex-direction: column;
+}
+
+.info_text{
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
@@ -87,11 +176,6 @@
     margin: 8px 0 12px 0;
 
     font-weight: 400;
-}
-
-.info__div_first{
-    display: flex;
-    flex-direction: column;
 }
 
 .info__div_first span {
@@ -191,6 +275,7 @@
     display: flex;
 
     height: 36px;
+    z-index: 2;
 }
 
 .percentage__div_positive{

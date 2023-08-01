@@ -23,6 +23,7 @@ export default function Body() {
     const [view, setView] = useState<string | undefined>()
     const [windowWidth, setWindowWidth] = useState(window.innerWidth)
 
+    /* View option states */
     const [optionView, setOptionView] = useState<string>('List')
     const [showOptions, setShowOptions] = useState(false);
  
@@ -151,7 +152,7 @@ export default function Body() {
                         lastUpdated={e.lastUpdated}
                         votes={e.votes}
                         sendVote={handleSendVote}
-                        optionView={view}
+                        optionView={optionView}
                     />
                 )}
             </div>
