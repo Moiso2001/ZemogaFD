@@ -1,1 +1,1 @@
-You could find README on ./client folder :)
+You can find README on ./client folder :)
