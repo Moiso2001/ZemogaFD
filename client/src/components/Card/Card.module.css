@@ -276,6 +276,16 @@
     font-family: 'Lato', sans-serif;
 }
 
+.div_global::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.0001) 0%, rgba(0, 0, 0, 0.6) 100%);
+}
+
   /* -- Design of thumbs --*/
 .thumbsUp{
     display: flex;
